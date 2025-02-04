@@ -1,4 +1,4 @@
-name: build/http-client-portfolio
+name: check-format/http-client-portfolio
 
 on:
   pull_request:
@@ -7,9 +7,9 @@ on:
       - main
 
 jobs:
-  build:
-    name: project-build
+  prettier:
     runs-on: ubuntu-latest
+
     steps:
       - name: checkout-repo-code
         uses: actions/checkout@v4
@@ -18,8 +18,5 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
 
-      - name: install-project-dependencies
-        run: npm ci
-
-      - name: build
-        run: npm run build
+      - name: check-format
+        run: npm run check-format
