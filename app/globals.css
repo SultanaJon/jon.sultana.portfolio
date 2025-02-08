@@ -2,59 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+body {
+  background-color: var(--background);
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
+    --background: #ffffff;
+    --foreground: #6e6e6e;
+    --card: #f6f8fc;
+    --card-foreground: #181818;
+    --popover: #ffffff;
+    --popover-foreground: #181818;
+    --primary: #14b8a6;
+    --primary-foreground: #f6f8fc;
+    --secondary: #139686;
+    --secondary-foreground: #f6f8fc;
+    --muted: #ececec;
+    --muted-foreground: #69707b;
+    --accent: #f9fafb;
+    --accent-secondary: #f3f3f3;
+    --accent-foreground: #181818;
+    --destructive: #e0535f;
+    --destructive-foreground: #f6f8fc;
+    --border: #f4f4f4;
+    --input: #efefef;
+    --ring: #6842c6;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: #e2572d;
+    --chart-2: #179d8e;
+    --chart-3: #264d63;
+    --chart-4: #f5c244;
+    --chart-5: #f79c49;
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: #181818;
+    --foreground: #929292;
+    --card: #181818;
+    --card-foreground: #f6f8fc;
+    --popover: #0a0e14;
+    --popover-foreground: #f6f8fc;
+    --primary: #14b8a6;
+    --primary-foreground: #f6f8fc;
+    --secondary: #139686;
+    --secondary-foreground: #f6f8fc;
+    --muted: #232a36;
+    --muted-foreground: #9da6b7;
+    --accent: #1c1c1c;
+    --accent-secondary: #212121;
+    --accent-foreground: #dddddd;
+    --destructive: #e0535f;
+    --destructive-foreground: #f6f8fc;
+    --border: #1f1f1f;
+    --input: #232a36;
+    --ring: #6245b6;
+    --chart-1: #2556d7;
+    --chart-2: #22996e;
+    --chart-3: #ff9c4a;
+    --chart-4: #9154cc;
+    --chart-5: #d22f60;
   }
 }

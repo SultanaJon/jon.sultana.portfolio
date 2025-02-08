@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-export default function Home() {
+export default function About() {
   return (
     <div style={{ padding: '10px' }}>
-      <h3>REST view.</h3>
+      <h3>About me view.</h3>
     </div>
   );
 }
