@@ -16,7 +16,7 @@ export default function NavButton({ path, text, icon }: INavButtonProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname == path) setIsActive(true);
+    setIsActive(pathname == path);
   }, [pathname, path]);
 
   return (
