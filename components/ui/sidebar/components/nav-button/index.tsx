@@ -8,9 +8,15 @@ export interface INavButtonProps {
   path: string;
   text: string;
   icon: JSX.Element;
+  isExpanded: boolean;
 }
 
-export default function NavButton({ path, text, icon }: INavButtonProps) {
+export default function NavButton({
+  path,
+  text,
+  icon,
+  isExpanded,
+}: INavButtonProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const pathname = usePathname();
@@ -25,7 +31,7 @@ export default function NavButton({ path, text, icon }: INavButtonProps) {
       className={cx(styles.link, isActive ? styles.active : '')}
     >
       {icon}
-      <span>{text}</span>
+      {isExpanded && <span>{text}</span>}
     </Link>
   );
 }

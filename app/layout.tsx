@@ -5,6 +5,7 @@ import { Header } from '@/components/ui/header';
 import AppBar from '@/components/ui/app-bar';
 import Sidebar from '@/components/ui/sidebar';
 import styles from './layout.module.css';
+import Footer from '@/components/ui/footer';
 
 import './globals.css';
 
@@ -39,11 +40,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AppBar />
-          <Header />
-          <div className={styles.content}>
-            <Sidebar />
-            {children}
+          <div className={styles.app}>
+            <AppBar />
+            <Header />
+            <div className={styles.content}>
+              <Sidebar />
+              {children}
+            </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

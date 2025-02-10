@@ -14,13 +14,11 @@ const Header = () => {
   const [themeIcon, setThemeIcon] = useState(<Moon />);
 
   useEffect(() => {
-    console.log(theme);
     if (theme == 'light') setThemeIcon(<Moon />);
     else setThemeIcon(<Sun />);
   }, [setThemeIcon, theme]);
 
   const handleThemeChange = () => {
-    console.log('changing theme');
     if (theme === 'light') setTheme('dark');
     else setTheme('light');
   };
@@ -28,8 +26,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={cx(styles.flex, styles.gap, styles.alignedCenter)}>
-        <GhostIconButton onClick={() => {}} icon={<Github />} />
-        <GhostIconButton onClick={() => {}} icon={<Linkedin />} />
+        <GhostIconButton size={'icon'} onClick={() => {}} icon={<Github />} />
+        <GhostIconButton size={'icon'} onClick={() => {}} icon={<Linkedin />} />
       </div>
       <div>
         <div
@@ -40,7 +38,11 @@ const Header = () => {
             styles.alignedCenter
           )}
         >
-          <GhostIconButton onClick={handleThemeChange} icon={themeIcon} />
+          <GhostIconButton
+            size={'icon'}
+            onClick={handleThemeChange}
+            icon={themeIcon}
+          />
           <Avatar style={{ height: '30px', width: '30px' }}>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>

@@ -4,6 +4,10 @@
   border-right: solid 0.1px var(--border);
 }
 
+.expanded {
+  width: 4.5rem;
+}
+
 .icon {
   height: 17px;
   width: 17px;

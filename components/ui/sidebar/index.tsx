@@ -3,8 +3,12 @@
 import { Link2, Settings, FolderKanban, CircleUserRound } from 'lucide-react';
 import NavButton from './components/nav-button';
 import styles from './styles.module.css';
+import { useSidebarStore } from '@/stores/sidebar-store';
+import cx from 'classnames';
 
 export default function Sidebar() {
+  const { isExpanded } = useSidebarStore();
+
   const navProps = [
     {
       path: '/',
@@ -29,7 +33,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={cx(styles.sidebar, isExpanded ? styles.expanded : '')}>
       <nav>
         {navProps.map((prop) => (
           <NavButton
@@ -37,6 +41,7 @@ export default function Sidebar() {
             path={prop.path}
             text={prop.text}
             icon={prop.icon}
+            isExpanded={isExpanded}
           />
         ))}
       </nav>
