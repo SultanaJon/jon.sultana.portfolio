@@ -23,7 +23,7 @@ const GhostIconButton = ({
       className={styles.button}
     >
       {icon}
-      <span>{text}</span>
+      {text}
     </Button>
   );
 };

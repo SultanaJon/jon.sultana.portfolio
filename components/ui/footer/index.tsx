@@ -13,9 +13,11 @@ import {
 } from 'lucide-react';
 import styles from './styles.module.css';
 import { useSidebarStore } from '@/stores/sidebar-store';
+import { useAccentStore } from '@/stores/accent-store';
 
 export default function Footer() {
   const { toggleIsExpanded } = useSidebarStore();
+  const { accentColor } = useAccentStore();
 
   return (
     <div className={styles.footer}>
@@ -39,7 +41,7 @@ export default function Footer() {
       <div className={styles.signature}>
         <span>Made with</span>
         <span>
-          <Heart size={'17px'} />
+          <Heart stroke={accentColor.color} size={'17px'} />
         </span>
         <span>
           by <span className={styles.name}>Jon Sultana</span>

@@ -1,0 +1,7 @@
+.toggleGroup {
+  justify-content: flex-start;
+}
+
+.active * {
+  color: var(--primary);
+}

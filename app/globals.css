@@ -21,9 +21,9 @@ body {
     --popover: #ffffff;
     --popover-foreground: #181818;
     --primary: #14b8a6;
-    --primary-foreground: #f6f8fc;
+    --primary-foreground: #181818;
     --secondary: #139686;
-    --secondary-foreground: #f6f8fc;
+    --secondary-foreground: #181818;
     --muted: #ececec;
     --muted-foreground: #69707b;
     --accent: #f9fafb;

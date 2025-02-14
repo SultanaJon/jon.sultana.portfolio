@@ -1,0 +1,18 @@
+.container {
+  width: 40%;
+  padding: 1rem;
+}
+
+.headingThree {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--primary-foreground);
+  letter-spacing: -0.025rem;
+}
+
+.subheading {
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.25rem 0;
+}
