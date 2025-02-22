@@ -8,6 +8,7 @@ import cx from 'classnames';
 import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
 import { GhostIconButton } from '../ghost-icon-button';
+import Link from 'next/link';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -26,8 +27,19 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={cx(styles.flex, styles.gap, styles.alignedCenter)}>
-        <GhostIconButton size={'icon'} onClick={() => {}} icon={<Github />} />
-        <GhostIconButton size={'icon'} onClick={() => {}} icon={<Linkedin />} />
+        <Link target={`_blank`} href={`https://github.com/SultanaJon`}>
+          <GhostIconButton size={'icon'} onClick={() => {}} icon={<Github />} />
+        </Link>
+        <Link
+          target={`_blank`}
+          href={`https://www.linkedin.com/in/jonathan-sultana-29b56558/`}
+        >
+          <GhostIconButton
+            size={'icon'}
+            onClick={() => {}}
+            icon={<Linkedin />}
+          />
+        </Link>
       </div>
       <div>
         <div
