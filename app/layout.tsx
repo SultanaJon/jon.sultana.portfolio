@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/theme-provider';
-import { Header } from '@/components/ui/header';
-import AppBar from '@/components/ui/app-bar';
-import Sidebar from '@/components/ui/sidebar';
+import { Header } from '@/app/components/header';
+import AppBar from '@/app/components/app-bar';
+import NavigationPane from '@/app/components/navigation-pane';
 import styles from './layout.module.css';
-import Footer from '@/components/ui/footer';
+import Footer from '@/app/components/footer';
 
 import './globals.css';
+import { Separator } from '@/components/ui/separator';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,10 +44,13 @@ export default function RootLayout({
           <div className={styles.app}>
             <AppBar />
             <Header />
+            <Separator orientation="horizontal" />
             <div className={styles.content}>
-              <Sidebar />
+              <NavigationPane />
+              <Separator orientation="vertical" />
               {children}
             </div>
+            <Separator orientation="horizontal" />
             <Footer />
           </div>
         </ThemeProvider>

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 * {
-  font-weight: 600;
   color: var(--foreground);
+  font-size: 0.95rem;
 }
 
 body {
@@ -26,6 +26,8 @@ body {
     --secondary-foreground: #181818;
     --muted: #ececec;
     --muted-foreground: #69707b;
+    --muted-secondary: #bdbdbe;
+    --muted-secondary-foreground: #989898;
     --accent: #f9fafb;
     --accent-secondary: #f3f3f3;
     --accent-foreground: #181818;
@@ -55,6 +57,8 @@ body {
     --secondary-foreground: #f6f8fc;
     --muted: #232a36;
     --muted-foreground: #9da6b7;
+    --muted-secondary: #191e27;
+    --muted-secondary-foreground: #848c9b;
     --accent: #1c1c1c;
     --accent-secondary: #212121;
     --accent-foreground: #dddddd;

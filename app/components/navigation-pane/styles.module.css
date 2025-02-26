@@ -1,0 +1,13 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.expanded {
+  width: 4.5rem;
+}
+
+.icon {
+  height: 17px;
+  width: 17px;
+}

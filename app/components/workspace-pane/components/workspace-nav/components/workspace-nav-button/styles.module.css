@@ -1,0 +1,7 @@
+.active * {
+  color: var(--primary);
+}
+
+.button:hover * {
+  color: var(--accent-foreground);
+}
