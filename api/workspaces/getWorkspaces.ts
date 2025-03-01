@@ -1,6 +1,7 @@
 import supabase from '@/services/supabase/client';
+import { Workspace } from '@/types/Workspace';
 
-export async function getWorkspaces() {
+export async function getWorkspaces(): Promise<Workspace[]> {
   const { data, error } = await supabase
     .schema('api')
     .from('workspaces')
