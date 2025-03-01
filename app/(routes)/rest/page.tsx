@@ -9,7 +9,7 @@ import WorkspacePane from '@/app/components/workspace-pane';
 import { usePaneStore } from '@/stores/pane-store';
 import * as React from 'react';
 
-export default function Home() {
+const RestPage = () => {
   const { isWorkspacePaneExpanded } = usePaneStore();
   return (
     <ResizablePanelGroup direction="horizontal">
@@ -20,12 +20,16 @@ export default function Home() {
           </span>
         </div>
       </ResizablePanel>
-      <ResizableHandle />
       {isWorkspacePaneExpanded && (
-        <ResizablePanel defaultSize={25}>
-          <WorkspacePane />
-        </ResizablePanel>
+        <>
+          <ResizableHandle />
+          <ResizablePanel defaultSize={25}>
+            <WorkspacePane />
+          </ResizablePanel>
+        </>
       )}
     </ResizablePanelGroup>
   );
-}
+};
+
+export default RestPage;
