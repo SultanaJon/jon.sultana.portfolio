@@ -20,14 +20,13 @@ const RestPage = () => {
           </span>
         </div>
       </ResizablePanel>
-      {isWorkspacePaneExpanded && (
-        <>
-          <ResizableHandle />
-          <ResizablePanel defaultSize={25}>
-            <WorkspacePane />
-          </ResizablePanel>
-        </>
-      )}
+      <ResizableHandle disabled={!isWorkspacePaneExpanded} />
+      <ResizablePanel
+        defaultSize={25}
+        style={{ display: !isWorkspacePaneExpanded ? 'none' : '' }}
+      >
+        <WorkspacePane />
+      </ResizablePanel>
     </ResizablePanelGroup>
   );
 };
