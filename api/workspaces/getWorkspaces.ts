@@ -1,4 +1,4 @@
-import supabase from '@/services/supabaseClient';
+import supabase from '@/services/supabase/client';
 
 export async function getWorkspaces() {
   const { data, error } = await supabase
