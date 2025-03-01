@@ -13,7 +13,7 @@ import AccentToggle from '@/app/components/settings/accent-toggle';
 import { useEffect, useState } from 'react';
 import SettingGroup from '@/app/components/settings/setting-group';
 
-export default function Projects() {
+const SettingsPage = () => {
   const [selectedTheme, setSelectedTheme] = useState<string>('');
 
   const { theme, themes } = useTheme();
@@ -53,4 +53,6 @@ export default function Projects() {
       </SettingSection>
     </div>
   );
-}
+};
+
+export default SettingsPage;
