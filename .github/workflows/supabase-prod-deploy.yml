@@ -23,5 +23,5 @@ jobs:
           version: latest
 
       - run: supabase login $SUPABASE_ACCESS_TOKEN
-      - run: supabase link --project-ref $SUPABASE_PROJECT_ID
+      - run: supabase link --project-ref $SUPABASE_PROJECT_ID --debug
       - run: supabase db push
