@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 
-export default function AppBar() {
+export default function GripBar() {
   return (
     <div className={styles.container}>
       <div className={styles.buttonGroup}>
