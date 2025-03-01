@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/theme-provider';
-import { Header } from '@/app/components/header';
+import Header from '@/app/components/header';
 import GripBar from '@/app/components/grip-bar';
 import NavigationPane from '@/app/components/navigation-pane';
 import styles from './layout.module.css';
