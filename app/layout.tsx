@@ -6,6 +6,7 @@ import GripBar from '@/app/components/grip-bar';
 import NavigationPane from '@/app/components/navigation-pane';
 import styles from './layout.module.css';
 import Footer from '@/app/components/footer';
+import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
 import { Separator } from '@/components/ui/separator';
@@ -53,6 +54,7 @@ export default function RootLayout({
             <Separator orientation="horizontal" />
             <Footer />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

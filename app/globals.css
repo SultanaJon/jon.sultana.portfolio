@@ -16,10 +16,12 @@ body {
   :root {
     --background: #ffffff;
     --foreground: #6e6e6e;
+    --background-contrast-color: #fdfdfd;
     --card: #f6f8fc;
     --card-foreground: #181818;
     --popover: #ffffff;
     --popover-foreground: #181818;
+    --divider-dark-color: #efefef;
     --primary: #14b8a6;
     --primary-foreground: #181818;
     --secondary: #139686;
@@ -47,10 +49,12 @@ body {
   .dark {
     --background: #181818;
     --foreground: #929292;
+    --background-contrast-color: #171717;
     --card: #181818;
     --card-foreground: #f6f8fc;
-    --popover: #0a0e14;
+    --popover: #1b1b1b;
     --popover-foreground: #f6f8fc;
+    --divider-dark-color: #27272a;
     --primary: #14b8a6;
     --primary-foreground: #f6f8fc;
     --secondary: #139686;

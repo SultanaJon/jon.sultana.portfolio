@@ -25,7 +25,7 @@ export default function WorkspaceNav() {
   ];
 
   return (
-    <aside>
+    <aside className="bg-[--background]">
       <nav className={styles.nav}>
         {items.map((item, index) => (
           <WorkspaceNavButton

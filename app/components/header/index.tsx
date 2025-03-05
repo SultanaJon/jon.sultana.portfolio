@@ -1,8 +1,10 @@
+'use client';
 import cx from 'classnames';
 import styles from './styles.module.css';
 import ThemeSelector from '../theme-selector';
 import ProfileAvatar from '../profile-avatar';
 import SocialLinks from '../social-links';
+import WorkspaceSelector from './components/workspace-selector';
 
 const Header = () => {
   return (
@@ -15,10 +17,12 @@ const Header = () => {
           styles.flex,
           styles.gap,
           styles.flexEnd,
-          styles.alignedCenter
+          styles.alignedCenter,
+          'gap-3'
         )}
       >
         <ThemeSelector />
+        <WorkspaceSelector />
         <ProfileAvatar />
       </div>
     </header>
