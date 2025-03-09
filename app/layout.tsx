@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/theme-provider';
-import Header from '@/app/components/header';
-import GripBar from '@/app/components/grip-bar';
-import NavigationPane from '@/app/components/navigation-pane';
+import Header from '@/app/(components)/layout/header';
+import GripBar from '@/app/(components)/layout/grip-bar';
+import NavigationPane from '@/app/(components)/layout/navigation-pane';
 import styles from './layout.module.css';
-import Footer from '@/app/components/footer';
+import Footer from '@/app/(components)/layout/footer';
 import { Toaster } from '@/components/ui/sonner';
+import { Separator } from '@/components/ui/separator';
 
 import './globals.css';
-import { Separator } from '@/components/ui/separator';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

@@ -1,9 +1,0 @@
-.breadcrumb {
-  padding: 0.5rem 1rem 0.5rem 1rem;
-}
-
-.breadcrumb * {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--muted-secondary-foreground);
-}

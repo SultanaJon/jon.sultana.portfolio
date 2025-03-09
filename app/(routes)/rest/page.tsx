@@ -1,11 +1,11 @@
 'use client';
 
+import WorkspacePane from '@/app/(components)/sections/workspace-pane';
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/components/ui/resizable';
-import WorkspacePane from '@/app/components/workspace-pane';
 import { usePaneStore } from '@/stores/pane-store';
 import * as React from 'react';
 
@@ -20,7 +20,10 @@ const RestPage = () => {
           </span>
         </div>
       </ResizablePanel>
-      <ResizableHandle disabled={!isWorkspacePaneExpanded} />
+      <ResizableHandle
+        className="hover:bg-[--primary] hover:w-[.2rem] cursor-ew-resize"
+        disabled={!isWorkspacePaneExpanded}
+      />
       <ResizablePanel
         defaultSize={25}
         style={{ display: !isWorkspacePaneExpanded ? 'none' : '' }}

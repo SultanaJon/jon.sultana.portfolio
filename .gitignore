@@ -40,3 +40,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+app/(routes)/settings/page.tsx
+app/(routes)/settings/styles.module.css
+app/components/sections/settings/accent-toggle/index.tsx
+app/components/sections/settings/accent-toggle/styles.module.css
+app/components/sections/settings/background-toggle/index.tsx
+app/components/sections/settings/background-toggle/styles.module.css
+app/components/sections/settings/setting-content/index.tsx
+app/components/sections/settings/setting-content/styles.module.css
+app/components/sections/settings/setting-group/index.tsx
+app/components/sections/settings/setting-group/styles.module.css
+app/components/sections/settings/setting-heading/index.tsx
+app/components/sections/settings/setting-heading/styles.module.css
+app/components/sections/settings/setting-section/index.tsx
+app/components/sections/settings/setting-section/styles.module.css
+app/components/sections/settings/setting-subheading/index.tsx
+app/components/sections/settings/setting-subheading/styles.module.css
+app/components/sections/settings-section/index.tsx
+app/components/sections/settings-section/components/accent-toggle.tsx
+app/components/sections/settings-section/components/background-toggle.tsx
+app/components/sections/settings-section/components/settings-content.tsx
+app/components/sections/settings-section/components/settings-group.tsx
+app/components/sections/settings-section/components/settings-heading.tsx
+app/components/sections/settings-section/components/settings.subheading.tsx

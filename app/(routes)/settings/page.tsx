@@ -1,17 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import styles from './styles.module.css';
 import { useTheme } from 'next-themes';
 import { useAccentStore } from '@/stores/accent-store';
-import SettingSection from '@/app/components/settings/setting-section';
-import SettingHeading from '@/app/components/settings/setting-heading';
-import SettingContent from '@/app/components/settings/setting-content';
-import SettingSubheading from '@/app/components/settings/setting-subheading';
-import BackgroundToggle from '@/app/components/settings/background-toggle';
-import AccentToggle from '@/app/components/settings/accent-toggle';
 import { useEffect, useState } from 'react';
-import SettingGroup from '@/app/components/settings/setting-group';
+import BackgroundToggle from '@/app/(components)/sections/settings-section/components/background-toggle';
+import AccentToggle from '@/app/(components)/sections/settings-section/components/accent-toggle';
+import SettingsSection from '@/app/(components)/sections/settings-section';
+import SettingsHeading from '@/app/(components)/sections/settings-section/components/settings-heading';
+import SettingsContent from '@/app/(components)/sections/settings-section/components/settings-content';
+import SettingsGroup from '@/app/(components)/sections/settings-section/components/settings-group';
+import SettingsSubheading from '@/app/(components)/sections/settings-section/components/settings.subheading';
 
 const SettingsPage = () => {
   const [selectedTheme, setSelectedTheme] = useState<string>('');
@@ -25,33 +24,28 @@ const SettingsPage = () => {
   }, [theme]);
 
   return (
-    <div className={styles.container}>
-      <SettingSection>
-        <SettingHeading
-          headerText="Theme"
-          subtext="Customize your application theme."
-        />
-        <SettingContent>
-          <SettingGroup>
-            <SettingSubheading
-              headerText="Background"
-              subText={selectedTheme}
-            />
-            <BackgroundToggle theme={selectedTheme} themes={themes} />
-          </SettingGroup>
-          <SettingGroup>
-            <SettingSubheading
-              headerText="Accent color"
-              subText={accentColor.name}
-            />
-            <AccentToggle
-              selectedAccent={accentColor}
-              availableAccents={accentColors}
-            />
-          </SettingGroup>
-        </SettingContent>
-      </SettingSection>
-    </div>
+    <SettingsSection>
+      <SettingsHeading
+        headerText="Theme"
+        subtext="Customize your application theme."
+      />
+      <SettingsContent>
+        <SettingsGroup>
+          <SettingsSubheading headerText="Background" subText={selectedTheme} />
+          <BackgroundToggle theme={selectedTheme} themes={themes} />
+        </SettingsGroup>
+        <SettingsGroup>
+          <SettingsSubheading
+            headerText="Accent color"
+            subText={accentColor.name}
+          />
+          <AccentToggle
+            selectedAccent={accentColor}
+            availableAccents={accentColors}
+          />
+        </SettingsGroup>
+      </SettingsContent>
+    </SettingsSection>
   );
 };
 
