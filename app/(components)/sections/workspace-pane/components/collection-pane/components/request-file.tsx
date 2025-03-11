@@ -1,3 +1,4 @@
+'use client';
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
 import { EllipsisVerticalIcon, RotateCcwIcon } from 'lucide-react';
 

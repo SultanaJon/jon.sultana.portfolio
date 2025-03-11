@@ -1,3 +1,5 @@
+'use client';
+
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
 import {
   EllipsisVerticalIcon,

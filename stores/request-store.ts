@@ -2,12 +2,17 @@ import { getRequests } from '@/app/(lib)/supabase/queries';
 import { Request } from '@/types/Request';
 import { create } from 'zustand';
 
-export type IRequestStore = {
+export type RequestState = {
   isLoading: boolean;
   error: boolean;
   errorMessage: string | undefined;
   requests: Request[];
+  activeRequest: Request | undefined;
+};
+
+export type RequestActions = {
   fetchRequests: (collectionId: string) => void;
+  setActiveRequest: (requestId: string) => void;
 };
 
 const initialState = {
@@ -15,36 +20,45 @@ const initialState = {
   error: false,
   errorMessage: undefined,
   requests: [],
-  fetchRequests: (collectionId: string) => {},
-} as IRequestStore;
+  activeRequest: undefined,
+} as RequestState;
 
-export const useRequestStore = create<IRequestStore>((set) => ({
-  ...initialState,
-  fetchRequests: async (collectionId: string) => {
-    try {
-      set({ ...initialState, isLoading: true });
-      var response = await getRequests(collectionId);
+export const useRequestStore = create<RequestState & RequestActions>(
+  (set, get) => ({
+    ...initialState,
+    fetchRequests: async (collectionId: string) => {
+      try {
+        set({ ...initialState, isLoading: true });
+        var response = await getRequests(collectionId);
 
-      const error = response.error;
-      if (error != null) {
+        const error = response.error;
+        if (error != null) {
+          set({
+            ...initialState,
+            error: true,
+            errorMessage: `code: ${error.code}, message: ${error.message}}`,
+          });
+          return;
+        }
+
+        let requests = response?.data ?? [];
+
+        set({
+          ...initialState,
+          activeRequest: requests[0] ?? undefined,
+          requests: requests,
+        });
+      } catch (error) {
         set({
           ...initialState,
           error: true,
-          errorMessage: `code: ${error.code}, message: ${error.message}}`,
+          errorMessage: (error as Error).message,
         });
-        return;
       }
-
-      set({
-        ...initialState,
-        requests: response?.data ?? [],
-      });
-    } catch (error) {
-      set({
-        ...initialState,
-        error: true,
-        errorMessage: (error as Error).message,
-      });
-    }
-  },
-}));
+    },
+    setActiveRequest: (requestId: string) => {
+      var request = get().requests.find((r) => r.id === requestId);
+      set({ activeRequest: request });
+    },
+  })
+);

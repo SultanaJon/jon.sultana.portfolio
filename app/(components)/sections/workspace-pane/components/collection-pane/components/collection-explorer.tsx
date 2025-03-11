@@ -1,3 +1,5 @@
+'use client';
+
 import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
 import { useCollectionStore } from '@/stores/collection-store';
 import { useEffect } from 'react';

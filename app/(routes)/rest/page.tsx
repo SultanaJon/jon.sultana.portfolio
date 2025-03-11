@@ -1,5 +1,6 @@
 'use client';
 
+import RestClientSection from '@/app/(components)/sections/rest-client-section';
 import WorkspacePane from '@/app/(components)/sections/workspace-pane';
 import {
   ResizableHandle,
@@ -14,11 +15,7 @@ const RestPage = () => {
   return (
     <ResizablePanelGroup direction="horizontal">
       <ResizablePanel defaultSize={75}>
-        <div className="flex h-[200px] items-center justify-center p-6">
-          <span className="font-semibold">
-            The REST tools will display here
-          </span>
-        </div>
+        <RestClientSection />
       </ResizablePanel>
       <ResizableHandle
         className="hover:bg-[--primary] hover:w-[.2rem] cursor-ew-resize"

@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { JSX } from 'react';
 import cx from 'classnames';

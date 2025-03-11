@@ -42,13 +42,16 @@ const accentColors = [
   },
 ];
 
-interface IAccentStore {
+export type AccentState = {
   accentColor: AccentColor;
-  setAccentColor: (accent: AccentColor) => void;
   accentColors: AccentColor[];
-}
+};
 
-export const useAccentStore = create<IAccentStore>((set) => ({
+export type AccentActions = {
+  setAccentColor: (accent: AccentColor) => void;
+};
+
+export const useAccentStore = create<AccentState & AccentActions>((set) => ({
   accentColor: defaultAccent,
   setAccentColor: (accentColor: AccentColor) => {
     set({ accentColor: accentColor });

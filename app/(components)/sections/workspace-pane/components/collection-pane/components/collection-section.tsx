@@ -1,3 +1,5 @@
+'use client';
+
 import { useRequestStore } from '@/stores/request-store';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';

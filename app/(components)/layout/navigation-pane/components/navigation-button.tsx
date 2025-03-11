@@ -28,7 +28,7 @@ export default function NavButton({
     <Link
       href={path}
       className={cx(
-        'relative flex-[3_1_0] p-[1rem] flex flex-col items-center justify-center gap-[.4rem] *:text-[.8rem] hover:bg-[--accent-secondary] [&_*]:hover:text-[--accent-foreground] border-l-[3px] border-transparent',
+        'relative flex-[3_1_0] pt-[1.3rem] pb-[1.3rem] pl-[1rem] pr-[1rem] flex flex-col items-center justify-center gap-[.4rem] *:text-[.8rem] hover:bg-[--accent-secondary] [&_*]:hover:text-[--accent-foreground] border-l-[3px] border-transparent',
         isActive
           ? 'border-l-[3px] border-solid !border-[--primary] bg-[--accent] [&_*]:text-[--accent-foreground]'
           : ''

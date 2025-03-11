@@ -1,19 +1,28 @@
 import { create } from 'zustand';
 
-interface IPaneStore {
+export type PaneState = {
   isNavPaneExpanded: boolean;
   isWorkspacePaneExpanded: boolean;
+};
+
+export type PaneActions = {
   toggleIsNavPaneExpanded: () => void;
   toggleIsWorkspacePaneExpanded: () => void;
-}
+};
 
-export const usePaneStore = create<IPaneStore>((set) => ({
+const initialState = {
   isNavPaneExpanded: true,
   isWorkspacePaneExpanded: true,
+} as PaneState;
+
+export const usePaneStore = create<PaneState & PaneActions>((set) => ({
+  ...initialState,
   toggleIsNavPaneExpanded: () =>
     set((state) => ({ isNavPaneExpanded: !state.isNavPaneExpanded })),
-  toggleIsWorkspacePaneExpanded: () =>
+  toggleIsWorkspacePaneExpanded: () => {
+    console.log('hello');
     set((state) => ({
       isWorkspacePaneExpanded: !state.isWorkspacePaneExpanded,
-    })),
+    }));
+  },
 }));
