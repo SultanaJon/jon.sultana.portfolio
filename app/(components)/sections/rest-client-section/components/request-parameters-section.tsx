@@ -1,5 +1,5 @@
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
-import BoxedSearch from '../../workspace-pane/components/collection-pane/components/boxed-search';
+import BoxedSearch from '../../../ui/boxed-search';
 import { CheckCircle2Icon, TrashIcon } from 'lucide-react';
 
 const RequestEditorTabSection = () => {

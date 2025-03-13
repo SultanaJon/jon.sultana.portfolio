@@ -1,4 +1,4 @@
-import BoxedSearch from './components/boxed-search';
+import BoxedSearch from '../../../../ui/boxed-search';
 import CollectionToolbar from './components/collection-toolbar';
 import WorkspaceBreadcrumb from '../workspace-breadcrumb';
 import CollectionExplorer from './components/collection-explorer';

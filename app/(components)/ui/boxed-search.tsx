@@ -11,7 +11,7 @@ const BoxedSearch = ({ className, placeholder }: IBoxedSearch) => {
   return (
     <Input
       className={cx(
-        'focus-visible:ring-transparent rounded-none border-none shadow-none pl-[1rem] placeholder:text-[--muted-secondary-foreground] focus:text-[--foreground]',
+        'focus-visible:ring-transparent rounded-none border-none shadow-none pl-[1rem] placeholder:text-[--muted-secondary-foreground] focus:text-[--foreground] font-medium',
         className
       )}
       placeholder={placeholder}

@@ -1,12 +1,15 @@
 import { SaveIcon } from 'lucide-react';
 import MenuButton from './menu-button';
 import RequestInput from './request-input';
+import { useRequestStore } from '@/stores/request-store';
 
 const RequestBar = () => {
+  const { activeRequest } = useRequestStore();
+
   return (
     <div className="flex gap-[1rem] p-[1.2rem]">
       <div className="flex w-full h-[2.5rem]">
-        <RequestInput />
+        <RequestInput url={activeRequest?.endpoint} />
       </div>
       <div className="flex gap-[.5rem] ml-auto h-[2.5rem]">
         <MenuButton colorMode="default">
