@@ -3,42 +3,51 @@ import { create } from 'zustand';
 
 export const defaultAccent: AccentColor = {
   name: 'Teal',
-  color: `#14b8a6`,
+  primary: '#14b8a6',
+  secondary: '#12a191',
 };
 
-const accentColors = [
+const accentColors: AccentColor[] = [
   {
     name: 'Green',
-    color: `#3ED248`,
+    primary: '#3ED248',
+    secondary: '#2fc839',
   },
   defaultAccent,
   {
     name: 'Blue',
-    color: `#4872E7`,
+    primary: '#4872E7',
+    secondary: '#3161e4',
   },
   {
     name: 'Indigo',
-    color: `#6B50E4`,
+    primary: '#6B50E4',
+    secondary: '#583ae1',
   },
   {
     name: 'Purple',
-    color: `#A248E7`,
+    primary: '#A248E7',
+    secondary: '#9731e4',
   },
   {
     name: 'Yellow',
-    color: `#E7E148`,
+    primary: '#E7E148',
+    secondary: '#e4dd31',
   },
   {
     name: 'Orange',
-    color: `#E79D48`,
+    primary: '#E79D48',
+    secondary: '#e49131',
   },
   {
     name: 'Red',
-    color: `#E74848`,
+    primary: '#E74848',
+    secondary: '#e43131',
   },
   {
     name: 'Pink',
-    color: `#E748A2`,
+    primary: '#E748A2',
+    secondary: '#e43197',
   },
 ];
 
@@ -58,7 +67,8 @@ export const useAccentStore = create<AccentState & AccentActions>((set) => ({
 
     // Update the variable for the accent color
     let root = document.documentElement;
-    root.style.setProperty('--primary', accentColor.color);
+    root.style.setProperty('--primary', accentColor.primary);
+    root.style.setProperty('--secondary', accentColor.secondary);
   },
   accentColors: accentColors,
 }));

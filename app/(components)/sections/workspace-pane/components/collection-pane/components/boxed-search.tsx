@@ -1,12 +1,22 @@
 import { Input } from '@/components/ui/input';
+import React from 'react';
+import cx from 'classnames';
 
-export default function BoxedSearch() {
-  return (
-    <div>
-      <Input
-        className="focus-visible:ring-transparent rounded-none border-none shadow-none pl-[1rem] placeholder:text-[--muted-secondary-foreground] focus:text-[--foreground]"
-        placeholder="Search"
-      />
-    </div>
-  );
+export interface IBoxedSearch {
+  className?: string;
+  placeholder: string;
 }
+
+const BoxedSearch = ({ className, placeholder }: IBoxedSearch) => {
+  return (
+    <Input
+      className={cx(
+        'focus-visible:ring-transparent rounded-none border-none shadow-none pl-[1rem] placeholder:text-[--muted-secondary-foreground] focus:text-[--foreground]',
+        className
+      )}
+      placeholder={placeholder}
+    />
+  );
+};
+
+export default BoxedSearch;

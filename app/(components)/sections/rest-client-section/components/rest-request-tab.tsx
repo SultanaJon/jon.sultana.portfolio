@@ -4,14 +4,19 @@ import { XIcon } from 'lucide-react';
 import cx from 'classnames';
 import { useRequestStore } from '@/stores/request-store';
 
-export interface IRequestTab {
+export interface IRestRequestTab {
   requestId: string;
   method: string;
   name: string;
   isActive: boolean;
 }
 
-const RequestTab = ({ requestId, method, name, isActive }: IRequestTab) => {
+const RestRequestTab = ({
+  requestId,
+  method,
+  name,
+  isActive,
+}: IRestRequestTab) => {
   const setActiveRequest = useRequestStore((state) => state.setActiveRequest);
 
   return (
@@ -54,4 +59,4 @@ const RequestTab = ({ requestId, method, name, isActive }: IRequestTab) => {
   );
 };
 
-export default RequestTab;
+export default RestRequestTab;

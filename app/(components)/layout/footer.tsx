@@ -41,7 +41,7 @@ export default function Footer() {
       <div className="flex items-center gap-[.5rem] text-[.8rem]">
         <span>Made with</span>
         <span>
-          <Heart stroke={accentColor.color} size={'17px'} />
+          <Heart stroke={accentColor.primary} size={'17px'} />
         </span>
         <span>
           by <span>Jon Sultana</span>

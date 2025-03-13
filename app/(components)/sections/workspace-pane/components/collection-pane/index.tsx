@@ -9,7 +9,7 @@ export default function CollectionPane() {
     <div className="w-full flex flex-col bg-[--background-contrast-color]">
       <WorkspaceBreadcrumb />
       <Separator orientation="horizontal" />
-      <BoxedSearch />
+      <BoxedSearch placeholder="Search" />
       <Separator orientation="horizontal" />
       <CollectionToolbar />
       <Separator orientation="horizontal" />

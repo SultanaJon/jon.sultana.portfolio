@@ -1,4 +1,4 @@
-import RequestTab from './request-tab';
+import RestRequestTab from './rest-request-tab';
 import { EyeIcon, PlusIcon } from 'lucide-react';
 import { GhostIconButton } from '../../../ui/ghost-icon-button';
 import { useRequestStore } from '@/stores/request-store';
@@ -11,7 +11,7 @@ const ClientTabSection = () => {
       <div className="flex flex-1">
         <div className="flex">
           {requests.map((r) => (
-            <RequestTab
+            <RestRequestTab
               key={r.id}
               requestId={r.id}
               method={r.method}

@@ -1,4 +1,5 @@
 export type AccentColor = {
   name: string;
-  color: string;
+  primary: string;
+  secondary: string;
 };

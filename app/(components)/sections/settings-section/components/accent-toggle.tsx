@@ -17,7 +17,7 @@ export default function AccentToggle({
   const handleAccentColorChange = (newAccent: string) => {
     if (newAccent) {
       const selectedAccent = availableAccents.filter(
-        (a) => a.color == newAccent
+        (a) => a.primary == newAccent
       )[0];
       setAccentColor(selectedAccent);
     }
@@ -25,18 +25,18 @@ export default function AccentToggle({
 
   return (
     <ToggleGroup
-      value={selectedAccent.color}
+      value={selectedAccent.primary}
       size={'sm'}
       type="single"
       onValueChange={handleAccentColorChange}
       className="justify-start"
     >
       {availableAccents.map((ac, index) => (
-        <ToggleGroupItem key={index} value={ac.color}>
-          {ac.color == selectedAccent.color ? (
-            <CircleCheck stroke={ac.color} />
+        <ToggleGroupItem key={index} value={ac.primary}>
+          {ac.primary == selectedAccent.primary ? (
+            <CircleCheck stroke={ac.primary} />
           ) : (
-            <Circle stroke={ac.color} />
+            <Circle stroke={ac.primary} />
           )}
         </ToggleGroupItem>
       ))}

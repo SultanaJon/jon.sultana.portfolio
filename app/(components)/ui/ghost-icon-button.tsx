@@ -2,26 +2,29 @@
 
 import { JSX } from 'react';
 import { Button } from '../../../components/ui/button';
+import cx from 'classnames';
 
 export interface IGhostIconButtonProps {
-  onClick: () => void;
+  className?: string;
   icon: JSX.Element;
   text?: string | '';
   size?: 'icon' | 'default' | 'sm' | 'lg' | null | undefined;
+  onClick: () => void;
 }
 
 const GhostIconButton = ({
-  onClick,
+  className,
   icon,
   text,
   size,
+  onClick,
 }: IGhostIconButtonProps) => {
   return (
     <Button
       size={size}
       variant={`ghost`}
       onClick={onClick}
-      className="[&_*]:hover:text-[--accent-foreground]"
+      className={cx('[&_*]:hover:text-[--accent-foreground]', className)}
     >
       {icon}
       {text}

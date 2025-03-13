@@ -1,7 +1,8 @@
 'use client';
 
 import { Folder, Layers, Clock, Share2, Code } from 'lucide-react';
-import WorkspaceNavButton from './components/workspace-nav-button';
+import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
+import cx from 'classnames';
 
 export default function WorkspaceNav() {
   const items = [
@@ -27,10 +28,16 @@ export default function WorkspaceNav() {
     <aside className="bg-[--background]">
       <nav className="flex flex-col gap-[.5rem]">
         {items.map((item, index) => (
-          <WorkspaceNavButton
+          <GhostIconButton
             key={index}
             icon={item.icon}
-            isActive={item.isActive}
+            onClick={() => {}}
+            className={cx(
+              !item.isActive ? '[&_*]:hover:text-[--accent-foreground]' : '',
+              item.isActive
+                ? '[&_*]:text-[--primary] [&_*]:hover:text-[--primary]'
+                : ''
+            )}
           />
         ))}
       </nav>
