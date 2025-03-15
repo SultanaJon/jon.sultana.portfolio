@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function CollectionPane() {
   return (
-    <div className="w-full flex flex-col bg-[--background-contrast-color]">
+    <div className="w-full flex flex-col">
       <WorkspaceBreadcrumb />
       <Separator orientation="horizontal" />
       <BoxedSearch placeholder="Search" />

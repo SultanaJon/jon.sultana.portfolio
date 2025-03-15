@@ -2,52 +2,32 @@ import { AccentColor } from '@/types/AccentColor';
 import { create } from 'zustand';
 
 export const defaultAccent: AccentColor = {
-  name: 'Teal',
-  primary: '#14b8a6',
-  secondary: '#12a191',
+  name: 'Seagreen',
+  primary: '#579E80',
+  secondary: '#4E8D73',
 };
 
 const accentColors: AccentColor[] = [
-  {
-    name: 'Green',
-    primary: '#3ED248',
-    secondary: '#2fc839',
-  },
   defaultAccent,
   {
     name: 'Blue',
-    primary: '#4872E7',
-    secondary: '#3161e4',
-  },
-  {
-    name: 'Indigo',
-    primary: '#6B50E4',
-    secondary: '#583ae1',
-  },
-  {
-    name: 'Purple',
-    primary: '#A248E7',
-    secondary: '#9731e4',
-  },
-  {
-    name: 'Yellow',
-    primary: '#E7E148',
-    secondary: '#e4dd31',
-  },
-  {
-    name: 'Orange',
-    primary: '#E79D48',
-    secondary: '#e49131',
+    primary: '#66DBC0',
+    secondary: '#5DC6AD',
   },
   {
     name: 'Red',
-    primary: '#E74848',
-    secondary: '#e43131',
+    primary: '#BC5C67',
+    secondary: '#A4515A',
+  },
+  {
+    name: 'Purple',
+    primary: '#8C4E8D',
+    secondary: '#6F3E70',
   },
   {
     name: 'Pink',
-    primary: '#E748A2',
-    secondary: '#e43197',
+    primary: '#C56DB5',
+    secondary: '#B063A2',
   },
 ];
 

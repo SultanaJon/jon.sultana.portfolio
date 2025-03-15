@@ -16,7 +16,6 @@ body {
   :root {
     --background: #ffffff;
     --foreground: #6e6e6e;
-    --background-contrast-color: #fdfdfd;
     --card: #f6f8fc;
     --card-foreground: #181818;
     --popover: #ffffff;
@@ -48,28 +47,27 @@ body {
   }
 
   .dark {
-    --background: #181818;
+    --background: #1b1b1f;
     --foreground: #929292;
-    --background-contrast-color: #171717;
-    --card: #181818;
+    --card: #1b1b1f;
     --card-foreground: #f6f8fc;
-    --popover: #1b1b1b;
+    --popover: #202127;
     --popover-foreground: #f6f8fc;
     --divider-dark-color: #27272a;
-    --primary: #14b8a6;
+    --primary: #4b9978;
     --primary-foreground: #f6f8fc;
-    --secondary: #139686;
+    --secondary: #44886c;
     --secondary-foreground: #f6f8fc;
     --muted: #232a36;
     --muted-foreground: #8f8f8f;
     --muted-secondary: #191e27;
     --muted-secondary-foreground: #686868;
-    --accent: #1c1c1e;
-    --accent-secondary: #212121;
+    --accent: #202127;
+    --accent-secondary: #202127;
     --accent-foreground: #dddddd;
     --destructive: #e0535f;
     --destructive-foreground: #f6f8fc;
-    --border: #1f1f1f;
+    --border: #202127;
     --input: #232a36;
     --ring: #6245b6;
     --chart-1: #2556d7;
@@ -77,13 +75,13 @@ body {
     --chart-3: #ff9c4a;
     --chart-4: #9154cc;
     --chart-5: #d22f60;
-    --method-get-color: #10b981;
+    --method-get-color: #1fb16d;
 
     /* CSS variables for JSON viewer. */
     --w-rjv-color: #9cdcfe;
     --w-rjv-key-number: #268bd2;
     --w-rjv-key-string: #9cdcfe;
-    --w-rjv-background-color: #181818;
+    --w-rjv-background-color: #1b1b1f;
     --w-rjv-line-color: #36334280;
     --w-rjv-arrow-color: #838383;
     --w-rjv-edit-color: #9cdcfe;

@@ -17,7 +17,7 @@ const RequestStatusSection = ({
   const [size, setSize] = useState<string>('0');
 
   useEffect(() => {
-    setColor(code == 200 ? 'green' : 'indianred');
+    setColor(code == 200 ? '#1fb16d' : 'indianred');
   }, [code]);
 
   useEffect(() => {
