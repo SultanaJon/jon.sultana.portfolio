@@ -62,7 +62,7 @@ const WorkspaceSelector = () => {
       <PopoverContent className="w-60">
         <WorkspacePopoverItemButton
           displayText={`Personal Workspace`}
-          isChecked={false}
+          isChecked={!selectedWorkspace}
           icon={<UserRound />}
         />
         <Separator className="my-2" />
@@ -74,11 +74,13 @@ const WorkspaceSelector = () => {
             <GhostIconButton onClick={() => {}} icon={<Plus />} />
           </span>
         </div>
-        <WorkspacePopoverItemButton
-          displayText={workspace}
-          isChecked={true}
-          icon={<Users />}
-        />
+        {selectedWorkspace && (
+          <WorkspacePopoverItemButton
+            displayText={workspace}
+            isChecked={true}
+            icon={<Users />}
+          />
+        )}
       </PopoverContent>
     </Popover>
   );

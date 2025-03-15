@@ -18,8 +18,14 @@ const CollectionSection = ({
 }: ICollectionSection) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
-  const { fetchRequests, requests, isLoading, error, errorMessage } =
-    useRequestStore();
+  const {
+    fetchRequests,
+    requests,
+    activeRequest,
+    isLoading,
+    error,
+    errorMessage,
+  } = useRequestStore();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +56,13 @@ const CollectionSection = ({
           <div className="ml-[1.5rem] border border-solid border-[--divider-dark-color]" />
           <div className="w-full">
             {requests.map((r) => (
-              <RequestFile key={r.id} name={r.name} method={r.method} />
+              <RequestFile
+                key={r.id}
+                requestId={r.id}
+                isActive={r.id === activeRequest?.id}
+                name={r.name}
+                method={r.method}
+              />
             ))}
           </div>
         </div>

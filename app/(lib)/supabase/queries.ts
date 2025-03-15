@@ -3,7 +3,7 @@ import { Workspace } from '@/types/Workspace';
 import { SupabaseResponse } from './types';
 import { PostgrestSingleResponse } from '@supabase/supabase-js';
 import { Collection } from '@/types/Collection';
-import { Request } from '@/types/Request';
+import { RequestWithResponse } from '@/types/Request';
 
 function processSupabaseResponse<T>(
   response: PostgrestSingleResponse<T>
@@ -34,12 +34,12 @@ const getCollections = async (
 
 const getRequests = async (
   collectionId: string
-): Promise<SupabaseResponse<Request[]>> => {
-  return processSupabaseResponse<Request[]>(
+): Promise<SupabaseResponse<RequestWithResponse[]>> => {
+  return processSupabaseResponse<RequestWithResponse[]>(
     await supabase
       .schema('api')
       .from('requests')
-      .select('*')
+      .select('*, responses(*)')
       .eq('collection_id', collectionId)
   );
 };

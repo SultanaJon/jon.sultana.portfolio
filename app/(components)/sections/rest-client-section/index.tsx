@@ -9,9 +9,8 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/components/ui/resizable';
-import RequestTabSection from './components/request-editor-tab-section';
-import RequestEditorTabSection from './components/request-parameters-section';
-import RequestBar from './components/request-bar';
+import ResponseSection from './components/response-section';
+import RequestEditorSection from './components/request-editor-section';
 
 const RestClientSection = () => {
   const [componentRendering, setComponentRendering] = useState<boolean>(true);
@@ -29,16 +28,15 @@ const RestClientSection = () => {
       <ClientTabSection />
       <div className="h-full">
         <ResizablePanelGroup direction="vertical">
-          <ResizablePanel defaultSize={50}>
-            <div className="h-full">
-              <RequestBar />
-              <RequestTabSection />
-              <RequestEditorTabSection />
-            </div>
+          <ResizablePanel defaultSize={30}>
+            <RequestEditorSection />
           </ResizablePanel>
           <ResizableHandle className="hover:bg-[--primary] hover:!h-[.2rem] cursor-ew-resize" />
-          <ResizablePanel defaultSize={50}>
-            <span>Response</span>
+          <ResizablePanel
+            defaultSize={70}
+            className="flex flex-col overflow-hidden"
+          >
+            <ResponseSection />
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>

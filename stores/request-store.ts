@@ -1,13 +1,13 @@
 import { getRequests } from '@/app/(lib)/supabase/queries';
-import { Request } from '@/types/Request';
+import { RequestWithResponse } from '@/types/Request';
 import { create } from 'zustand';
 
 export type RequestState = {
   isLoading: boolean;
   error: boolean;
   errorMessage: string | undefined;
-  requests: Request[];
-  activeRequest: Request | undefined;
+  requests: RequestWithResponse[];
+  activeRequest: RequestWithResponse | undefined;
 };
 
 export type RequestActions = {

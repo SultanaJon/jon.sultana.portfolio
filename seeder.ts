@@ -24,7 +24,7 @@ const main = async () => {
               name: 'Contact Information',
               method: 'GET',
               endpoint:
-                'https://me.com/api/v1/user/3202c5ba-348b-4956-8193-8fdd91f891a9/contact-info',
+                'https://portfolio.com/api/v1/user/3202c5ba-348b-4956-8193-8fdd91f891a9/contact',
               auth: [
                 {
                   token: '<<auth_token>>',
@@ -43,7 +43,7 @@ const main = async () => {
               name: 'Work Experience',
               method: 'GET',
               endpoint:
-                'https://me.com/api/v1/work-experience/user/3202c5ba-348b-4956-8193-8fdd91f891a9',
+                'https://portfolio.com/api/v1/user/3202c5ba-348b-4956-8193-8fdd91f891a9/experience',
               auth: [
                 {
                   token: '<<auth_token>>',
@@ -61,7 +61,8 @@ const main = async () => {
             {
               name: 'Weaknesses',
               method: 'GET',
-              endpoint: 'https://me.com/api/v1/weaknesses',
+              endpoint:
+                'https://portfolio.com/api/v1/user/3202c5ba-348b-4956-8193-8fdd91f891a9/weaknesses',
               auth: [
                 {
                   token: '<<auth_token>>',
@@ -72,7 +73,7 @@ const main = async () => {
                 {
                   code: 404,
                   status: 'Not Found',
-                  body: '',
+                  body: '{"status": 404, "error": "The resource was not found :)"}',
                 },
               ],
             },
