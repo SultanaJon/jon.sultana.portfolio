@@ -1,10 +1,10 @@
-import JsonView from '@uiw/react-json-view';
 import RequestEditorTab from './request-editor-tab';
 import { useRequestStore } from '@/stores/request-store';
 import { useEffect, useState } from 'react';
 import { Response } from '@/types/Response';
 import RequestStatusSection from './request-status-section';
 import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
+import CodeBlock from './code-block';
 
 const ResponseSection = () => {
   const [response, setResponse] = useState<Response | null>(null);
@@ -35,14 +35,13 @@ const ResponseSection = () => {
         <RequestEditorTab text="Test Results" />
       </div>
       {response && (
-        <JsonView
-          highlightUpdates={false}
-          enableClipboard={false}
-          displayObjectSize={false}
-          displayDataTypes={false}
-          collapsed={false}
-          className="p-[1.2rem] overflow-auto h-full"
-          value={JSON.parse(response.body ?? '{}')}
+        <CodeBlock
+          code={
+            response.body
+              ? JSON.stringify(JSON.parse(response.body), null, 2)
+              : ''
+          }
+          lang="json"
         />
       )}
     </>
