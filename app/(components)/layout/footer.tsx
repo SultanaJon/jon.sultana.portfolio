@@ -9,7 +9,6 @@ import {
   Zap,
   Share2,
   Columns2,
-  Heart,
 } from 'lucide-react';
 import { usePaneStore } from '@/stores/pane-store';
 import { useAccentStore } from '@/stores/accent-store';
@@ -40,8 +39,8 @@ export default function Footer() {
       </div>
       <div className="flex items-center gap-[.5rem] text-[.8rem]">
         <span>Made with</span>
-        <span>
-          <Heart stroke={accentColor.primary} size={'17px'} />
+        <span className="font-bold" style={{ color: accentColor.primary }}>
+          {'</>'}
         </span>
         <span>
           by <span>Jon Sultana</span>

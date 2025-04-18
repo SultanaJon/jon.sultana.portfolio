@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Response } from '@/types/Response';
 import RequestStatusSection from './request-status-section';
 import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
-import CodeBlock from './code-block';
+import CodeBlock from '@/app/(components)/ui/code-block';
 
 const ResponseSection = () => {
   const [response, setResponse] = useState<Response | null>(null);
@@ -35,14 +35,18 @@ const ResponseSection = () => {
         <RequestEditorTab text="Test Results" />
       </div>
       {response && (
-        <CodeBlock
-          code={
-            response.body
-              ? JSON.stringify(JSON.parse(response.body), null, 2)
-              : ''
-          }
-          lang="json"
-        />
+        <div className="p-[1.2rem] overflow-hidden h-full">
+          <div className="h-full overflow-hidden rounded">
+            <CodeBlock
+              code={
+                response.body
+                  ? JSON.stringify(JSON.parse(response.body), null, 2)
+                  : ''
+              }
+              lang="json"
+            />
+          </div>
+        </div>
       )}
     </>
   );

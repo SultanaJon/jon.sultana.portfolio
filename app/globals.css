@@ -15,6 +15,8 @@ body {
 @layer base {
   :root {
     --background: #ffffff;
+    --background-contrast: #efefef;
+    --background-secondary-contrast: #e3e3e3;
     --foreground: #6e6e6e;
     --card: #f6f8fc;
     --card-foreground: #181818;
@@ -48,6 +50,8 @@ body {
 
   .dark {
     --background: #1b1b1f;
+    --background-contrast: #202127;
+    --background-secondary-contrast: #21252b;
     --foreground: #929292;
     --card: #1b1b1f;
     --card-foreground: #f6f8fc;
@@ -76,34 +80,5 @@ body {
     --chart-4: #9154cc;
     --chart-5: #d22f60;
     --method-get-color: #1fb16d;
-
-    /* CSS variables for JSON viewer. */
-    --w-rjv-color: #9cdcfe;
-    --w-rjv-key-number: #268bd2;
-    --w-rjv-key-string: #9cdcfe;
-    --w-rjv-background-color: #1b1b1f;
-    --w-rjv-line-color: #36334280;
-    --w-rjv-arrow-color: #838383;
-    --w-rjv-edit-color: #9cdcfe;
-    --w-rjv-info-color: #9c9c9c7a;
-    --w-rjv-update-color: #9cdcfe;
-    --w-rjv-copied-color: #9cdcfe;
-    --w-rjv-copied-success-color: #28a745;
-    --w-rjv-curlybraces-color: #d4d4d4;
-    --w-rjv-colon-color: #d4d4d4;
-    --w-rjv-brackets-color: #d4d4d4;
-    --w-rjv-ellipsis-color: #cb4b16;
-    --w-rjv-quotes-color: #9cdcfe;
-    --w-rjv-quotes-string-color: #ce9178;
-    --w-rjv-type-string-color: #ce9178;
-    --w-rjv-type-int-color: #b5cea8;
-    --w-rjv-type-float-color: #b5cea8;
-    --w-rjv-type-bigint-color: #b5cea8;
-    --w-rjv-type-boolean-color: #569cd6;
-    --w-rjv-type-date-color: #b5cea8;
-    --w-rjv-type-url-color: #3b89cf;
-    --w-rjv-type-null-color: #569cd6;
-    --w-rjv-type-nan-color: #859900;
-    --w-rjv-type-undefined-color: #569cd6;
   }
 }

@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/theme-provider';
 import Header from '@/app/(components)/layout/header';
-import GripBar from '@/app/(components)/layout/grip-bar';
+import GripBar from './(components)/ui/grip-bar';
 import NavigationPane from '@/app/(components)/layout/navigation-pane';
-import styles from './layout.module.css';
 import Footer from '@/app/(components)/layout/footer';
 import { Toaster } from '@/components/ui/sonner';
 import { Separator } from '@/components/ui/separator';
@@ -42,11 +41,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className={styles.app}>
+          <div className="flex flex-col h-full">
             <GripBar />
             <Header />
             <Separator orientation="horizontal" />
-            <div className={styles.content}>
+            <div className="flex h-full">
               <NavigationPane />
               <Separator orientation="vertical" />
               {children}

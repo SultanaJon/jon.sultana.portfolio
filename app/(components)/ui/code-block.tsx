@@ -2,6 +2,7 @@ import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { createHighlighter } from 'shiki';
+import cx from 'classnames';
 
 export interface ICodeBlock {
   code: string;
@@ -35,7 +36,10 @@ const CodeBlock = ({ code, lang }: ICodeBlock) => {
       dangerouslySetInnerHTML={{
         __html: highlightedCode || <LoadingSpinner />,
       }}
-      className="w-full h-full overflow-auto p-[1.2rem] [&_pre]:rounded-lg [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto"
+      className={cx(
+        'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
+        theme === 'light' ? ' [&_pre]:!bg-[--accent]' : ''
+      )}
     />
   );
 };

@@ -10,14 +10,14 @@ export default function NavigationPane() {
 
   const navProps = [
     {
-      path: '/rest',
-      text: 'REST',
-      icon: <Link2 />,
-    },
-    {
       path: '/about',
       text: 'About',
       icon: <CircleUserRound />,
+    },
+    {
+      path: '/rest',
+      text: 'REST',
+      icon: <Link2 />,
     },
     {
       path: '/projects',
