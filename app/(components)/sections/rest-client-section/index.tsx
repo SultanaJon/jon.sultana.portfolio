@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import ClientTabSection from './components/client-tab-section';
-import { useRequestStore } from '@/stores/request-store';
 import LoadingSpinner from '../../ui/loading-indicator';
 import {
   ResizableHandle,
@@ -11,6 +10,7 @@ import {
 } from '@/components/ui/resizable';
 import ResponseSection from './components/response-section';
 import RequestEditorSection from './components/request-editor-section';
+import { useRequestStore } from '@/stores/request-store';
 
 const RestClientSection = () => {
   const [componentRendering, setComponentRendering] = useState<boolean>(true);

@@ -1,3 +1,6 @@
-import type { Database } from '@/types/database.types';
-
-export type Response = Database['api']['Tables']['responses']['Row'];
+export type Response = {
+  id: number;
+  code: number;
+  status: string;
+  body: string;
+};

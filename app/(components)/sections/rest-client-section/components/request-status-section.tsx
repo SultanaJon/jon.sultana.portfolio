@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import RequestStatusIndicator from './request-status-indicator';
 
 export interface IRequestStatusSection {
-  responseId: string;
+  responseId: number;
   code: number;
   codeDescription: string;
 }

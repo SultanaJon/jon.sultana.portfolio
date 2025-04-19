@@ -9,13 +9,13 @@ import CodeBlock from '@/app/(components)/ui/code-block';
 const ResponseSection = () => {
   const [response, setResponse] = useState<Response | null>(null);
 
-  const { activeRequest, isLoading } = useRequestStore();
+  const { selectedRequest, isLoading } = useRequestStore();
 
   useEffect(() => {
-    if (activeRequest != null) {
-      setResponse(activeRequest.responses);
+    if (selectedRequest != null) {
+      setResponse(selectedRequest.response);
     }
-  }, [activeRequest]);
+  }, [selectedRequest]);
 
   if (isLoading) return <LoadingSpinner />;
 

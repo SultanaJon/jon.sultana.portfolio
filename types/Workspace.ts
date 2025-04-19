@@ -1,3 +1,6 @@
-import type { Database } from '@/types/database.types';
+import { Collection } from './Collection';
 
-export type Workspace = Database['api']['Tables']['workspaces']['Row'];
+export type Workspace = {
+  id: number;
+  name: string;
+};

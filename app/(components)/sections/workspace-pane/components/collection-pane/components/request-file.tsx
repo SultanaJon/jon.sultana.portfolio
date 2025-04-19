@@ -5,17 +5,17 @@ import cx from 'classnames';
 import { useRequestStore } from '@/stores/request-store';
 
 export interface IRequestFile {
-  requestId: string;
+  requestId: number;
   name: string;
   method: string;
   isActive: boolean;
 }
 
 const RequestFile = ({ requestId, name, method, isActive }: IRequestFile) => {
-  const { setActiveRequest } = useRequestStore();
+  const { setSelectedRequest } = useRequestStore();
 
   const handleRequestClick = () => {
-    setActiveRequest(requestId);
+    setSelectedRequest(requestId);
   };
 
   return (

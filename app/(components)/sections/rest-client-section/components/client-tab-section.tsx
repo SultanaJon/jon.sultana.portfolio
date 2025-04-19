@@ -5,7 +5,7 @@ import { useRequestStore } from '@/stores/request-store';
 import { JSX } from 'react';
 
 const ClientTabSection = () => {
-  const { requests, activeRequest } = useRequestStore();
+  const { requests, selectedRequest } = useRequestStore();
 
   const buildRequestTabs = (): JSX.Element[] | JSX.Element => {
     return requests.length > 0 ? (
@@ -15,12 +15,12 @@ const ClientTabSection = () => {
           requestId={r.id}
           method={r.method}
           name={r.name}
-          isActive={activeRequest?.id === r.id}
+          isActive={selectedRequest?.id === r.id}
         />
       ))
     ) : (
       <RestRequestTab
-        requestId={'new'}
+        requestId={1}
         method={'GET'}
         name={'Untitled'}
         isActive={true}

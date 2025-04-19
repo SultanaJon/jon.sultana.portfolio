@@ -1,64 +1,46 @@
-import { getRequests } from '@/app/(lib)/supabase/queries';
-import { RequestWithResponse } from '@/types/Request';
+import { Request } from '@/types/Request';
 import { create } from 'zustand';
+import requests from '@/data/requests.json';
 
 export type RequestState = {
   isLoading: boolean;
-  error: boolean;
-  errorMessage: string | undefined;
-  requests: RequestWithResponse[];
-  activeRequest: RequestWithResponse | undefined;
+  requests: Request[];
+  selectedRequest: Request | undefined;
 };
 
 export type RequestActions = {
-  fetchRequests: (collectionId: string) => void;
-  setActiveRequest: (requestId: string) => void;
+  loadRequests: (collectionId: number) => void;
+  setSelectedRequest: (requestId: number) => void;
 };
 
 const initialState = {
   isLoading: false,
-  error: false,
-  errorMessage: undefined,
   requests: [],
-  activeRequest: undefined,
+  selectedRequest: undefined,
 } as RequestState;
 
 export const useRequestStore = create<RequestState & RequestActions>(
   (set, get) => ({
     ...initialState,
-    fetchRequests: async (collectionId: string) => {
-      try {
-        set({ ...initialState, isLoading: true });
-        var response = await getRequests(collectionId);
+    loadRequests: async (collectionId: number) => {
+      set({ ...initialState, isLoading: true });
 
-        const error = response.error;
-        if (error != null) {
-          set({
-            ...initialState,
-            error: true,
-            errorMessage: `code: ${error.code}, message: ${error.message}}`,
-          });
-          return;
-        }
-
-        let requests = response?.data ?? [];
+      setTimeout(() => {
+        const loadedRequests =
+          requests.length > 0
+            ? requests.filter((r) => r.collectionId === collectionId)
+            : [];
 
         set({
           ...initialState,
-          activeRequest: requests[0] ?? undefined,
-          requests: requests,
+          selectedRequest: loadedRequests[0] ?? undefined,
+          requests: loadedRequests,
         });
-      } catch (error) {
-        set({
-          ...initialState,
-          error: true,
-          errorMessage: (error as Error).message,
-        });
-      }
+      }, 300);
     },
-    setActiveRequest: (requestId: string) => {
+    setSelectedRequest: (requestId: number) => {
       var request = get().requests.find((r) => r.id === requestId);
-      set({ activeRequest: request });
+      set({ selectedRequest: request });
     },
   })
 );

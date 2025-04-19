@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { useRequestStore } from '@/stores/request-store';
 
 export interface IRestRequestTab {
-  requestId: string;
+  requestId: number;
   method: string;
   name: string;
   isActive: boolean;
@@ -17,11 +17,13 @@ const RestRequestTab = ({
   name,
   isActive,
 }: IRestRequestTab) => {
-  const setActiveRequest = useRequestStore((state) => state.setActiveRequest);
+  const setSelectedRequest = useRequestStore(
+    (state) => state.setSelectedRequest
+  );
 
   return (
     <button
-      onClick={() => setActiveRequest(requestId)}
+      onClick={() => setSelectedRequest(requestId)}
       className={cx(
         'group h-[3.8rem] w-[13rem] border-t-[.125rem] border-transparent hover:bg-[--border] border-r-[.025rem] border-r-[--border]',
         isActive

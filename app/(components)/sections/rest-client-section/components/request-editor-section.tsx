@@ -7,13 +7,13 @@ import BoxedSearch from '@/app/(components)/ui/boxed-search';
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
 
 const RequestEditorSection = () => {
-  const { activeRequest } = useRequestStore();
+  const { selectedRequest } = useRequestStore();
 
   return (
     <>
       <div className="flex gap-[1rem] p-[1.2rem]">
         <div className="flex w-full h-[2.5rem]">
-          <RequestInput url={activeRequest?.endpoint} />
+          <RequestInput url={selectedRequest?.endpoint} />
         </div>
         <div className="flex gap-[.5rem] ml-auto h-[2.5rem]">
           <MenuButton colorMode="default">

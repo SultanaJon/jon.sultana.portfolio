@@ -7,27 +7,21 @@ import { Separator } from '@/components/ui/separator';
 import { useWorkspacesStore } from '@/stores/workspace-store';
 import { ChevronDown, Plus, UserRound, Users, UsersRound } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { toast } from 'sonner';
 import WorkspacePopoverItemButton from './workspace-popover-item-button';
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
 
 const WorkspaceSelector = () => {
   const [workspace, setWorkspace] = useState<string>('Personal Workspace');
-  const { selectedWorkspace, isLoading, fetchWorkspaces, error, errorMessage } =
+  const { selectedWorkspace, isLoading, loadWorkspaces, workspaces } =
     useWorkspacesStore();
 
   useEffect(() => {
     const getData = async () => {
-      await fetchWorkspaces();
+      await loadWorkspaces();
     };
-    getData();
-  }, [fetchWorkspaces]);
 
-  useEffect(() => {
-    if (error) {
-      toast.error('Uh oh! Something went wrong', { description: errorMessage });
-    }
-  }, [error, errorMessage]);
+    if (workspaces.length === 0) getData();
+  }, [loadWorkspaces, workspaces]);
 
   useEffect(() => {
     if (!isLoading && selectedWorkspace != undefined)

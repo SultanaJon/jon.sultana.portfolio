@@ -2,13 +2,12 @@
 
 import { useRequestStore } from '@/stores/request-store';
 import { useEffect, useState } from 'react';
-import { toast } from 'sonner';
 import CollectionDirectory from './collection-directory';
 import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
 import RequestFile from './request-file';
 
 export interface ICollectionSection {
-  collectionId: string;
+  collectionId: number;
   collectionName: string;
 }
 
@@ -18,27 +17,15 @@ const CollectionSection = ({
 }: ICollectionSection) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
-  const {
-    fetchRequests,
-    requests,
-    activeRequest,
-    isLoading,
-    error,
-    errorMessage,
-  } = useRequestStore();
+  const { loadRequests, requests, selectedRequest, isLoading } =
+    useRequestStore();
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchRequests(collectionId);
+      await loadRequests(collectionId);
     };
-    fetchData();
-  }, [fetchRequests, collectionId]);
-
-  useEffect(() => {
-    if (error) {
-      toast.error('Uh oh! Something went wrong', { description: errorMessage });
-    }
-  }, [error, errorMessage]);
+    if (requests.length === 0) fetchData();
+  }, [loadRequests, collectionId, requests]);
 
   useEffect(() => {
     if (requests.length > 0) setIsOpen(true);
@@ -59,7 +46,7 @@ const CollectionSection = ({
               <RequestFile
                 key={r.id}
                 requestId={r.id}
-                isActive={r.id === activeRequest?.id}
+                isActive={r.id === selectedRequest?.id}
                 name={r.name}
                 method={r.method}
               />
