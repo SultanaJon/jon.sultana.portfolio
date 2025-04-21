@@ -1,24 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jon Sultana — Developer Portfolio
 
-## Getting Started
+This is my personal developer portfolio built with [Next.js](https://nextjs.org/), styled with Tailwind CSS, and inspired by the clean, developer-friendly interface of the Hoppscotch HTTP client. It showcases my projects, technical skills, and love for building modern web applications.
 
-First, run the development server:
+## 🚀 Getting Started
+
+To run this project locally, make sure you have [Node.js](https://nodejs.org/) installed.
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/SultanaJon/http-client-portfolio.git
+cd http-client-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run the development Server
+```bash
+npm run dev
+```
+
+## 🛠️ Building for Production
+
+To create an optimized production build:
+```bash
+npm run build
+```
+And to start the production server:
+```bash
+npm run start
+```
+The app will run at http://localhost:3000/about by default.
+
+## 🌐 Deployment
+
+This project is ready to deploy on platforms like [Vercel](https://vercel.com), [Netlify](https://www.netlify.com/), or any service that supports Next.js.
+
+### 🔧 Deploying to Vercel (Recommended)
+
+1. Go to [vercel.com](https://vercel.com) and sign in with your GitHub account.
+2. Click **"New Project"** and import your repository.
+3. Vercel automatically detects your Next.js setup.
+4. Click **"Deploy"** — and you’re live!
+
+Every push to your `main` branch will trigger a new deployment automatically.
+
+---
+
+### ⚙️ Other Options
+
+- **Netlify** — Great for static sites (`next export` required).
+- **Render** — Works with SSR and APIs too.
+- **GitHub Pages** — Only for fully static builds (no SSR or API routes).
+
+Choose based on your project needs, but Vercel is the easiest and most feature-rich for Next.js apps.
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+Feel free to use, modify, and distribute it as you see fit.
 
 ## Learn More
 
@@ -28,9 +73,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
