@@ -3,6 +3,7 @@
 import CodeBlock from '@/app/(components)/ui/code-block';
 import * as React from 'react';
 import CodeEditor from '@/app/(components)/ui/code-editor';
+import { Button } from '@/components/ui/button';
 
 const AboutPage = () => {
   const code = `import { hire } from 'hire';
@@ -26,24 +27,21 @@ developer.startBuilding();`;
             Hi, I&apos;m Jon Sultana
           </h1>
           <h3 className="text-2xl font-medium">
-            I&apos;m a web developer based in Michigan
+            A web developer based in Michigan
           </h3>
         </div>
         <div className="flex flex-col gap-[1rem]">
           <p className="text-xl font-light">
-            Hey, I’m a senior software engineer who’s all about building apps
-            that work smoothly and don’t get in the way. When I’m not in front
-            of a screen, you can find me outside—whether it’s hanging by a
-            campfire, cruising the trails, or mountain biking through some
-            backwoods. Just living life one adventure at a time.
-          </p>
-          <p className="text-xl font-light">
-            Let’s connect and talk about tech, nature, or anything in between.
-            Feel free to check out my projects or reach out directly!
-          </p>
-          <p className="text-xl font-light">
-            In the meantime, check out my HTTP client, modeled after Hopscotch,
-            to learn a little more about me and my work.
+            I am a Senior Software Engineer who enjoys building both frontend
+            and backend applications that are fast, intuitive, and thoughtfully
+            designed. Whether it’s crafting user interfaces or architecting
+            scalable APIs, I take pride in solving problems through clean,
+            maintainable code. When I’m not deep in a code editor, you’ll likely
+            find me spending time with my family, exploring the natural beauty
+            of Northern Michigan, or tearing through the trails on my mountain
+            bike. Thanks for stopping by. Before you go, be sure to check out my
+            REST client for more information about me and any recent projects
+            I’ve been working on!
           </p>
         </div>
       </section>
