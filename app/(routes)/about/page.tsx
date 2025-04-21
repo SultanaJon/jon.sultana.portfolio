@@ -3,7 +3,6 @@
 import CodeBlock from '@/app/(components)/ui/code-block';
 import * as React from 'react';
 import CodeEditor from '@/app/(components)/ui/code-editor';
-import { Button } from '@/components/ui/button';
 
 const AboutPage = () => {
   const code = `import { hire } from 'hire';
