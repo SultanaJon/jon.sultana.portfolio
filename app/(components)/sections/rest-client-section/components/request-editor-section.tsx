@@ -5,15 +5,20 @@ import { useRequestStore } from '@/stores/request-store';
 import RequestEditorTab from './request-editor-tab';
 import BoxedSearch from '@/app/(components)/ui/boxed-search';
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
+import { useEffect, useState } from 'react';
 
 const RequestEditorSection = () => {
+  const [endpoint, setEndpoint] = useState<string>(``);
   const { selectedRequest } = useRequestStore();
 
+  useEffect(() => {
+    if (selectedRequest) setEndpoint(selectedRequest.endpoint);
+  }, [selectedRequest]);
   return (
     <>
       <div className="flex gap-[1rem] p-[1.2rem]">
         <div className="flex w-full h-[2.5rem]">
-          <RequestInput url={selectedRequest?.endpoint} />
+          <RequestInput url={endpoint} />
         </div>
         <div className="flex gap-[.5rem] ml-auto h-[2.5rem]">
           <MenuButton colorMode="default">
