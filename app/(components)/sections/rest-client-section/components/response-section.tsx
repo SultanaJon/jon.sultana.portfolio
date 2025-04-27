@@ -38,11 +38,7 @@ const ResponseSection = () => {
         <div className="p-[1.2rem] overflow-hidden h-full">
           <div className="h-full overflow-hidden rounded">
             <CodeBlock
-              code={
-                response.body
-                  ? JSON.stringify(JSON.parse(response.body), null, 2)
-                  : ''
-              }
+              code={response.body ? JSON.stringify(response.body, null, 2) : ''}
               lang="json"
             />
           </div>

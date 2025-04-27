@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { usePaneStore } from '@/stores/pane-store';
 import { useAccentStore } from '@/stores/accent-store';
+import { portfolioConfig } from '@/config/porfolio.config';
 
 export default function Footer() {
   const { toggleIsNavPaneExpanded, toggleIsWorkspacePaneExpanded } =
@@ -43,7 +44,7 @@ export default function Footer() {
           {'</>'}
         </span>
         <span>
-          by <span>Jon Sultana</span>
+          by <span>{portfolioConfig.name}</span>
         </span>
       </div>
       <div>

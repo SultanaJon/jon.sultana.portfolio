@@ -1,6 +1,6 @@
 import { Collection } from '@/types/Collection';
 import { create } from 'zustand';
-import collections from '@/data/collections.json';
+import { portfolioConfig } from '@/config/porfolio.config';
 
 export type CollectionState = {
   isLoading: boolean;
@@ -24,8 +24,10 @@ export const useCollectionStore = create<CollectionState & CollectionActions>(
 
       setTimeout(() => {
         const loadedCollections =
-          collections.length > 0
-            ? collections.filter((c) => c.workspaceId === workspaceId)
+          portfolioConfig.collections.length > 0
+            ? portfolioConfig.collections.filter(
+                (c) => c.workspaceId === workspaceId
+              )
             : [];
 
         set({

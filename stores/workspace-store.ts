@@ -1,6 +1,6 @@
 import { Workspace } from '@/types/Workspace';
 import { create } from 'zustand';
-import workspaces from '@/data/workspaces.json';
+import { portfolioConfig } from '@/config/porfolio.config';
 
 export type WorkspaceState = {
   isLoading: boolean;
@@ -25,11 +25,16 @@ export const useWorkspacesStore = create<WorkspaceState & WorkspaceActions>(
       set({ ...initialState, isLoading: true });
 
       setTimeout(() => {
-        const loadedWorkspaces = workspaces.length > 0 ? workspaces : [];
+        const loadedWorkspaces =
+          portfolioConfig.workspaces.length > 0
+            ? portfolioConfig.workspaces
+            : [];
 
         // Just grab the first one. Maybe we will support the ability to swtich workspaces in the future.
         let selectedWorkspace =
-          loadedWorkspaces?.length > 0 ? workspaces[0] : undefined;
+          loadedWorkspaces?.length > 0
+            ? portfolioConfig.workspaces[0]
+            : undefined;
 
         set({
           ...initialState,

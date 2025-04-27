@@ -1,6 +1,6 @@
 import { Request } from '@/types/Request';
 import { create } from 'zustand';
-import requests from '@/data/requests.json';
+import { portfolioConfig } from '@/config/porfolio.config';
 
 export type RequestState = {
   isLoading: boolean;
@@ -27,8 +27,10 @@ export const useRequestStore = create<RequestState & RequestActions>(
 
       setTimeout(() => {
         const loadedRequests =
-          requests.length > 0
-            ? requests.filter((r) => r.collectionId === collectionId)
+          portfolioConfig.requests.length > 0
+            ? portfolioConfig.requests.filter(
+                (r) => r.collectionId === collectionId
+              )
             : [];
 
         set({
