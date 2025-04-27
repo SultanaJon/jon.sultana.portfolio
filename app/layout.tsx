@@ -6,6 +6,7 @@ import GripBar from './(components)/ui/grip-bar';
 import NavigationPane from '@/app/(components)/layout/navigation-pane';
 import Footer from '@/app/(components)/layout/footer';
 import { Separator } from '@/components/ui/separator';
+import { portfolioConfig } from '@/config/porfolio.config';
 
 import './globals.css';
 
@@ -19,15 +20,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Jon Sultana | Software Engineer',
-  description:
-    'Portfolio of Jon Sultana — Senior Software Engineer passionate about building intuitive, user-friendly applications.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-};
+export const metadata: Metadata = portfolioConfig.metadata;
 
 export default function RootLayout({
   children,
