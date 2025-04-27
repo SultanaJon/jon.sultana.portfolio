@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --background-contrast: #efefef;
+    --background-secondary-contrast: #e3e3e3;
+    --foreground: #6e6e6e;
+    --card: #f6f8fc;
+    --card-foreground: #181818;
+    --popover: #ffffff;
+    --popover-foreground: #181818;
+    --divider-dark-color: #efefef;
+    --primary: #14b8a6;
+    --primary-foreground: #181818;
+    --secondary: #139686;
+    --secondary-foreground: #181818;
+    --muted: #ececec;
+    --muted-foreground: #69707b;
+    --muted-secondary: #bdbdbe;
+    --muted-secondary-foreground: #989898;
+    --accent: #f9fafb;
+    --accent-secondary: #f3f3f3;
+    --accent-foreground: #181818;
+    --destructive: #e0535f;
+    --destructive-foreground: #f6f8fc;
+    --border: #f4f4f4;
+    --input: #efefef;
+    --ring: #6842c6;
+    --radius: 0.5rem;
+    --chart-1: #e2572d;
+    --chart-2: #179d8e;
+    --chart-3: #264d63;
+    --chart-4: #f5c244;
+    --chart-5: #f79c49;
+    --method-get-color: #10b981;
+  }
+
+  .dark {
+    --background: #1b1b1f;
+    --background-contrast: #202127;
+    --background-secondary-contrast: #21252b;
+    --foreground: #929292;
+    --card: #1b1b1f;
+    --card-foreground: #f6f8fc;
+    --popover: #202127;
+    --popover-foreground: #f6f8fc;
+    --divider-dark-color: #27272a;
+    --primary: #4b9978;
+    --primary-foreground: #f6f8fc;
+    --secondary: #44886c;
+    --secondary-foreground: #f6f8fc;
+    --muted: #232a36;
+    --muted-foreground: #8f8f8f;
+    --muted-secondary: #191e27;
+    --muted-secondary-foreground: #686868;
+    --accent: #202127;
+    --accent-secondary: #202127;
+    --accent-foreground: #dddddd;
+    --destructive: #e0535f;
+    --destructive-foreground: #f6f8fc;
+    --border: #202127;
+    --input: #232a36;
+    --ring: #6245b6;
+    --chart-1: #2556d7;
+    --chart-2: #22996e;
+    --chart-3: #ff9c4a;
+    --chart-4: #9154cc;
+    --chart-5: #d22f60;
+    --method-get-color: #1fb16d;
+  }
+}
