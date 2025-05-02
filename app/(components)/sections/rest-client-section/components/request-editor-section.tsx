@@ -21,10 +21,7 @@ const RequestEditorSection = () => {
           <RequestInput url={endpoint} />
         </div>
         <div className="flex gap-[.5rem] ml-auto h-[2.5rem]">
-          <MenuButton colorMode="default">
-            <SaveIcon />
-            Save
-          </MenuButton>
+          <MenuButton colorMode="default">Send</MenuButton>
           <MenuButton colorMode="dark">
             <SaveIcon />
             Save
