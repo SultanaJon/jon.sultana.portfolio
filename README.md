@@ -22,25 +22,7 @@ If you want to make your own personal changes, either **fork** this repository o
 
 ### 2. Customize Your Portfolio
 
-To personalize your portfolio, you need to update the `config/portfolio.config.ts` file with your own information.
-
-### Steps:
-1. Open `config/portfolio.config.ts`.
-2. Update the placeholder values with your own social linke, work history, etc.
-3. Update the `name` field with your **full name**.
-4. Optionally, update the **metadata** (like title, description, and keywords) and **about** section with your own details and background.
-
-Once you've updated the file, save your changes and preview your portfolio to see the updates.
-
-Example:
-
-```typescript
-const personalLinks = {
-  email: 'your-email@gmail.com',
-  github: 'https://github.com/your-profile',
-  linkedin: 'https://www.linkedin.com/in/your-profile',
-};
-```
+To personalize your portfolio, you need to update the `config/user.config.ts`, `data/workspace.ts` and `data/workspace.requests.ts` your own information.
 
 ### 2. Install dependencies
 
