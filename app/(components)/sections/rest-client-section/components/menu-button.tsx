@@ -5,45 +5,25 @@ import cx from 'classnames';
 
 export interface IMenuButton {
   children: ReactNode;
-  colorMode: 'default' | 'dark';
+  className?: string;
 }
 
-const MenuButton = ({ children, colorMode }: IMenuButton) => {
-  let bgColorTheme = {
-    foreground: '[&_*]:text-[#fff]',
-    background: 'bg-[--primary]',
-    hoverBackground: 'hover:bg-[--secondary]',
-  };
-
-  if (colorMode == 'dark')
-    bgColorTheme = {
-      foreground: '[&_*]:text-[--foreground]',
-      background: 'bg-[--accent]',
-      hoverBackground: 'hover:bg-[--border]',
-    };
-
+const MenuButton = ({ children, className }: IMenuButton) => {
   return (
     <div
       className={cx(
         `flex [&_*]:bg-transparent [&_*]:shadow-none rounded`,
-        bgColorTheme.background,
-        bgColorTheme.foreground
+        className
       )}
     >
       <Button
         className={cx(
-          `h-full w-[6rem] rounded-r-none`,
-          bgColorTheme.hoverBackground
+          `grow h-full w-[6rem] rounded-r-none justify-center items-center`
         )}
       >
         {children}
       </Button>
-      <Button
-        className={cx(
-          `h-full w-[2rem] rounded-l-none`,
-          bgColorTheme.hoverBackground
-        )}
-      >
+      <Button className={cx(`h-full w-[2rem] rounded-l-none ml-auto`)}>
         <ChevronDown />
       </Button>
     </div>

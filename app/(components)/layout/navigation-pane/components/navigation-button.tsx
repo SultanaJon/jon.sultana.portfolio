@@ -28,10 +28,10 @@ export default function NavButton({
     <Link
       href={path}
       className={cx(
-        'relative flex-[3_1_0] pt-[1.3rem] pb-[1.3rem] pl-[1rem] pr-[1rem] flex flex-col items-center justify-center gap-[.4rem] *:text-[.8rem] hover:bg-[--accent-secondary] [&_*]:hover:text-[--accent-foreground] border-l-[3px] border-transparent',
-        isActive
-          ? 'border-l-[3px] border-solid !border-[--primary] bg-[--accent] [&_*]:text-[--accent-foreground]'
-          : ''
+        'flex flex-col gap-[.4rem] grow items-center justify-center w-auto py-[1.3rem] px-[1rem] *:text-[.8rem] hover:bg-[--accent-secondary] [&_*]:hover:text-[--accent-foreground] border-solid border-l-[0px] border-t-[3px] border-transparent',
+        'md:border-l-[3px] md:border-t-[0px]',
+        isActive &&
+          '!border-[--primary] bg-[--accent] [&_*]:text-[--accent-foreground]'
       )}
     >
       {icon}

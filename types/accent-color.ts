@@ -1,5 +1,5 @@
-export type AccentColor = {
+export interface AccentColor {
   name: string;
   primary: string;
   secondary: string;
-};
+}

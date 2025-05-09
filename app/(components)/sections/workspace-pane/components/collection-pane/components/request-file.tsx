@@ -23,11 +23,12 @@ const RequestFile = ({ requestId, name, method, isActive }: IRequestFile) => {
       className="group flex flex-row cursor-pointer"
       onClick={handleRequestClick}
     >
-      <span className="flex flex-row gap-[1rem] items-center font-medium">
-        <span className="pl-[1rem] text-[--method-get-color]">{method}</span>
+      <span className="truncate flex flex-row gap-[1rem] items-center font-medium">
+        <span className="border-r-2 border-solid border-[--divider-dark-color] pl-[1.5rem] h-full" />
+        <span className="text-[--method-get-color]">{method}</span>
         <span
           className={cx(
-            'text-[.875rem] group-hover:text-[--primary-foreground]',
+            'truncate text-[.875rem] group-hover:text-[--primary-foreground]',
             isActive ? 'text-[--primary-foreground]' : ''
           )}
         >

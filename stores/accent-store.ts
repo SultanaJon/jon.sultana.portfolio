@@ -1,4 +1,4 @@
-import { AccentColor } from '@/types/AccentColor';
+import { AccentColor } from '@/types/accent-color';
 import { create } from 'zustand';
 
 export const defaultAccent: AccentColor = {

@@ -6,7 +6,7 @@ export default function CollectionToolbar() {
   return (
     <div className="flex flex-row justify-between">
       <GhostIconButton onClick={() => {}} icon={<Plus />} text={'New'} />
-      <span>
+      <span className="flex">
         <GhostIconButton onClick={() => {}} icon={<CircleHelp />} />
         <GhostIconButton onClick={() => {}} icon={<Import />} />
       </span>

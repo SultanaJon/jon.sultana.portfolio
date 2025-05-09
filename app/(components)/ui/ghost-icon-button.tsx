@@ -24,10 +24,13 @@ const GhostIconButton = ({
       size={size}
       variant={`ghost`}
       onClick={onClick}
-      className={cx('[&_*]:hover:text-[--accent-foreground]', className)}
+      className={cx(
+        '[&_*]:hover:text-[--accent-foreground] truncate',
+        className
+      )}
     >
       {icon}
-      {text}
+      <span className=" ">{text}</span>
     </Button>
   );
 };

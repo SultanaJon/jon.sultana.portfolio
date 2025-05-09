@@ -3,7 +3,7 @@ import * as React from 'react';
 
 const ProjectsPage = () => {
   return (
-    <div className="flex flex-col gap-[10px] m-auto w-[400px]">
+    <div className="flex flex-col gap-[10px] items-center justify-center w-[400px] h-full w-full">
       <div className="flex flex-col items-center justify-center">
         <Construction size={100} />
         <h3 className="text-lg font-extrabold">

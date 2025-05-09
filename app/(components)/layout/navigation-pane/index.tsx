@@ -34,11 +34,12 @@ export default function NavigationPane() {
   return (
     <aside
       className={cx(
-        'flex flex-col',
+        'w-full',
+        'md:h-full',
         isNavPaneExpanded ? 'w-[5rem]' : 'w-[3.8rem]'
       )}
     >
-      <nav>
+      <nav className={cx('flex flex-row', 'md:flex-col')}>
         {navProps.map((prop) => (
           <NavButton
             key={prop.path}

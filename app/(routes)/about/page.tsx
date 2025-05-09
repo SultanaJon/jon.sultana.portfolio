@@ -4,19 +4,24 @@ import CodeBlock from '@/app/(components)/ui/code-block';
 import * as React from 'react';
 import CodeEditor from '@/app/(components)/ui/code-editor';
 import cx from 'classnames';
-import { portfolioConfig } from '@/config/porfolio.config';
+import { userJobTitle, userName } from '@/config/user.config';
 
 const AboutPage = () => {
   const code = `import { hire } from 'hire';
 
 // Initialize the package with your developer details
-const developer = new hire(${JSON.stringify(portfolioConfig.about.codeSnippet, null, 2)});
+const developer = new hire({
+    name: ${userName},
+    role: ${userJobTitle},
+    skills: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'React'],
+    passion: 'Building web applications that improve the user experience.',
+  });
 
 // Start working with your new developer!
 developer.startBuilding();`;
 
   return (
-    <div className={cx('flex overflow-auto flex-col', 'lg:flex-row')}>
+    <div className={cx('flex flex-col', 'lg:flex-row')}>
       <section
         className={cx(
           'w-full flex flex-col gap-[1.5rem] py-[2rem] px-[2rem]',
@@ -25,15 +30,22 @@ developer.startBuilding();`;
       >
         <div>
           <h1 className="text-6xl font-bold mb-2 text-[--primary]">
-            {portfolioConfig.about.header}
+            {`Hi, I'm ${userName}`}
           </h1>
           <h3 className="text-2xl font-medium">
-            {portfolioConfig.about.subheader}
+            {`A ${userJobTitle} based in Dummy City`}
           </h3>
         </div>
         <div className="flex flex-col gap-[1rem]">
           <p className="text-xl font-light">
-            {portfolioConfig.about.description}
+            {`I am a ${userJobTitle} who enjoys building both frontend
+            and backend applications that are fast, intuitive, and thoughtfully
+            designed. Whether it's crafting user interfaces or learning
+            about new technologies, I take pride in solving problems through clean,
+            maintainable code. When I'm not deep in a code editor,
+            you'll likely find me exploring new hobbies or enjoying outdoor activities.
+            Thanks for stopping by. Before you go,
+            be sure to check out my work and recent projects!`}
           </p>
         </div>
       </section>
