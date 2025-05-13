@@ -9,20 +9,20 @@ To run this project locally, make sure you have [Node.js](https://nodejs.org/) i
 ### 1. Clone or fork this repository
 
 If you want to make your own personal changes, either **fork** this repository or **clone** it to your local machine.
-   
- - **Forking**: This creates a copy of the repository in your GitHub account. You can make changes and submit pull requests if you want to contribute.
- - **Cloning**: If you just want a personal copy for yourself, you can clone the repository to your local machine. 
 
- To clone the repository, run the following command:
-   
- ```bash
-  git clone https://github.com/SultanaJon/http-client-portfolio.git
-  cd http-client-portfolio
-  ```
+- **Forking**: This creates a copy of the repository in your GitHub account. You can make changes and submit pull requests if you want to contribute.
+- **Cloning**: If you just want a personal copy for yourself, you can clone the repository to your local machine.
+
+To clone the repository, run the following command:
+
+```bash
+ git clone https://github.com/SultanaJon/http-client-portfolio.git
+ cd http-client-portfolio
+```
 
 ### 2. Customize Your Portfolio
 
-To personalize your portfolio, you need to update the `config/user.config.ts`, `data/workspace.ts` and `data/workspace.requests.ts` your own information.
+To personalize your portfolio, you need to update the `config/user.config.ts`, `data/workspace.ts`, `data/workspace.requests.ts`, `data/projects.ts` with your own information.
 
 ### 2. Install dependencies
 
@@ -31,6 +31,7 @@ npm install
 ```
 
 ### 3. Run the development Server
+
 ```bash
 npm run dev
 ```
@@ -38,13 +39,17 @@ npm run dev
 ## 🛠️ Building for Production
 
 To create an optimized production build:
+
 ```bash
 npm run build
 ```
+
 And to start the production server:
+
 ```bash
 npm run start
 ```
+
 The app will run at http://localhost:3000/about by default.
 
 ## 🌐 Deployment
