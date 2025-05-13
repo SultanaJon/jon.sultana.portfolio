@@ -6,9 +6,25 @@ import Link from 'next/link';
 import * as React from 'react';
 import cx from 'classnames';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const ProjectsPage = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  function stringToHSLA(str: string, alpha: number = 0.7): string {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    const hue = Math.abs(hash % 360);
+    return `hsla(${hue}, 70%, 60%, ${alpha})`;
+  }
 
   if (!projects || projects.length === 0) {
     return (
@@ -21,16 +37,6 @@ const ProjectsPage = () => {
         </div>
       </div>
     );
-  }
-
-  function stringToHSLA(str: string, alpha: number = 0.7): string {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-
-    const hue = Math.abs(hash % 360);
-    return `hsla(${hue}, 70%, 60%, ${alpha})`;
   }
 
   return (
@@ -59,13 +65,17 @@ const ProjectsPage = () => {
                     return (
                       <span
                         key={index}
-                        style={{
-                          backgroundColor: stringToHSLA(
-                            technology,
-                            theme === 'dark' ? 0.5 : 0.9
-                          ),
-                          borderColor: stringToHSLA(technology, 1),
-                        }}
+                        style={
+                          mounted
+                            ? {
+                                backgroundColor: stringToHSLA(
+                                  technology,
+                                  theme === 'dark' ? 0.5 : 0.9
+                                ),
+                                borderColor: stringToHSLA(technology, 1),
+                              }
+                            : undefined
+                        }
                         className={`border-solid border-[1px] rounded-full px-[.5rem] py-[.2rem] text-[white]`}
                       >
                         {technology}
