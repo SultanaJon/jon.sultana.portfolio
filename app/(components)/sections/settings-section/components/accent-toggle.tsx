@@ -1,6 +1,6 @@
 import { Circle, CircleCheck } from 'lucide-react';
 import { useAccentStore } from '@/stores/accent-store';
-import { AccentColor } from '@/types/AccentColor';
+import { AccentColor } from '@/types/accent-color';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 export interface IAccentToggleProps {

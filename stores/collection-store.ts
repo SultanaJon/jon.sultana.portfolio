@@ -1,40 +1,15 @@
-import { Collection } from '@/types/Collection';
+import { workspace } from '@/data/workspace';
+import { Collection } from '@/types/collection';
 import { create } from 'zustand';
-import { portfolioConfig } from '@/config/porfolio.config';
 
 export type CollectionState = {
-  isLoading: boolean;
-  collections: Collection[];
-};
-
-export type CollectionActions = {
-  loadCollections: (workspaceId: number) => void;
+  collection: Collection | null;
 };
 
 const initialState = {
-  isLoading: false,
-  collections: [],
+  collection: workspace?.collection,
 } as CollectionState;
 
-export const useCollectionStore = create<CollectionState & CollectionActions>(
-  (set) => ({
-    ...initialState,
-    loadCollections: async (workspaceId: number) => {
-      set({ ...initialState, isLoading: true });
-
-      setTimeout(() => {
-        const loadedCollections =
-          portfolioConfig.collections.length > 0
-            ? portfolioConfig.collections.filter(
-                (c) => c.workspaceId === workspaceId
-              )
-            : [];
-
-        set({
-          ...initialState,
-          collections: loadedCollections,
-        });
-      }, 700);
-    },
-  })
-);
+export const useCollectionStore = create<CollectionState>((set) => ({
+  ...initialState,
+}));

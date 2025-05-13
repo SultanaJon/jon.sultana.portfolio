@@ -4,19 +4,19 @@ import CodeBlock from '@/app/(components)/ui/code-block';
 import * as React from 'react';
 import CodeEditor from '@/app/(components)/ui/code-editor';
 import cx from 'classnames';
-import { portfolioConfig } from '@/config/porfolio.config';
+import {
+  userCodeSnippet,
+  userJobTitle,
+  userLocation,
+  userName,
+  userStory,
+} from '@/config/user.config';
 
 const AboutPage = () => {
-  const code = `import { hire } from 'hire';
-
-// Initialize the package with your developer details
-const developer = new hire(${JSON.stringify(portfolioConfig.about.codeSnippet, null, 2)});
-
-// Start working with your new developer!
-developer.startBuilding();`;
+  const code = userCodeSnippet;
 
   return (
-    <div className={cx('flex overflow-auto flex-col', 'lg:flex-row')}>
+    <div className={cx('flex flex-col', 'lg:flex-row')}>
       <section
         className={cx(
           'w-full flex flex-col gap-[1.5rem] py-[2rem] px-[2rem]',
@@ -25,16 +25,14 @@ developer.startBuilding();`;
       >
         <div>
           <h1 className="text-6xl font-bold mb-2 text-[--primary]">
-            {portfolioConfig.about.header}
+            {`Hi, I'm ${userName}`}
           </h1>
           <h3 className="text-2xl font-medium">
-            {portfolioConfig.about.subheader}
+            {`A ${userJobTitle} based in ${userLocation}`}
           </h3>
         </div>
         <div className="flex flex-col gap-[1rem]">
-          <p className="text-xl font-light">
-            {portfolioConfig.about.description}
-          </p>
+          <p className="text-xl font-light">{userStory}</p>
         </div>
       </section>
       <section

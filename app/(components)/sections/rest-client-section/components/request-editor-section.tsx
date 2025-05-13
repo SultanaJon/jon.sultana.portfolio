@@ -6,6 +6,7 @@ import RequestEditorTab from './request-editor-tab';
 import BoxedSearch from '@/app/(components)/ui/boxed-search';
 import { GhostIconButton } from '@/app/(components)/ui/ghost-icon-button';
 import { useEffect, useState } from 'react';
+import cx from 'classnames';
 
 const RequestEditorSection = () => {
   const [endpoint, setEndpoint] = useState<string>(``);
@@ -16,13 +17,26 @@ const RequestEditorSection = () => {
   }, [selectedRequest]);
   return (
     <>
-      <div className="flex gap-[1rem] p-[1.2rem]">
+      <div className="flex flex-col gap-[1rem] p-[1.2rem] sm:flex-row">
         <div className="flex w-full h-[2.5rem]">
           <RequestInput url={endpoint} />
         </div>
-        <div className="flex gap-[.5rem] ml-auto h-[2.5rem]">
-          <MenuButton colorMode="default">Send</MenuButton>
-          <MenuButton colorMode="dark">
+        <div className="flex gap-[.5rem] h-[2.5rem] sm:ml-auto">
+          <MenuButton
+            className={cx(
+              'grow',
+              '[&_*]:text-[#fff]',
+              'bg-[--primary] [&>button:hover]:bg-[--secondary]'
+            )}
+          >
+            Send
+          </MenuButton>
+          <MenuButton
+            className={cx(
+              '[&_*]:text-[--foreground]',
+              ' bg-[--accent] [&>button:hover]:bg-[--border]'
+            )}
+          >
             <SaveIcon />
             Save
           </MenuButton>

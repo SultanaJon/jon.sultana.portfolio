@@ -1,23 +1,20 @@
 import RequestEditorTab from './request-editor-tab';
 import { useRequestStore } from '@/stores/request-store';
 import { useEffect, useState } from 'react';
-import { Response } from '@/types/Response';
 import RequestStatusSection from './request-status-section';
-import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
 import CodeBlock from '@/app/(components)/ui/code-block';
+import { Response } from '@/types/response';
 
 const ResponseSection = () => {
   const [response, setResponse] = useState<Response | null>(null);
 
-  const { selectedRequest, isLoading } = useRequestStore();
+  const { selectedRequest } = useRequestStore();
 
   useEffect(() => {
     if (selectedRequest != null) {
       setResponse(selectedRequest.response);
     }
   }, [selectedRequest]);
-
-  if (isLoading) return <LoadingSpinner />;
 
   if (response == null) return <div>No response found</div>;
 

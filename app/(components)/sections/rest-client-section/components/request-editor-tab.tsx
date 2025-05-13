@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 export interface IRequestEditorTab {
   text: string;
   isActive?: boolean;
@@ -6,7 +8,12 @@ export interface IRequestEditorTab {
 const RequestEditorTab = ({ text, isActive }: IRequestEditorTab) => {
   return (
     <div className="flex flex-col px-[1.2rem] py-[5px] text-[.925rem] font-medium cursor-pointer">
-      <span className={isActive ? 'text-[--secondary-foreground]' : ''}>
+      <span
+        className={cx(
+          'hover:text-[--secondary-foreground] truncate',
+          isActive ? 'text-[--secondary-foreground]' : ''
+        )}
+      >
         {text}
       </span>
       {isActive && (
