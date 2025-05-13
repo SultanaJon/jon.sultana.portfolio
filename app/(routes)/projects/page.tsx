@@ -42,7 +42,7 @@ const ProjectsPage = () => {
     >
       {projects.map((project, index) => {
         return (
-          <Link href={project.link} key={index}>
+          <Link key={index} href={project.link} target={`_blank`}>
             <div className="flex flex-col h-full w-full">
               <div
                 className={cx(
