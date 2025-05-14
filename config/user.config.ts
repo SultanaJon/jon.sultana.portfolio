@@ -35,10 +35,10 @@ const userObject = {
 export const userCodeSnippet = `import { hire } from 'hire';
 
 // Initialize the package with your developer details
-const developer = new hire();
+const developer = new hire(${JSON.stringify(userObject, null, 2)});
 
 // Start working with your new developer!
-developer.startBuilding(${JSON.stringify(userObject, null, 2)});`;
+developer.startBuilding();`;
 
 export const userStory = `I am a ${userJobTitle} who enjoys building both frontend
             and backend applications that are fast, intuitive, and thoughtfully
