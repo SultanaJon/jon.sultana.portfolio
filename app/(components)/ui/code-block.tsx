@@ -1,4 +1,3 @@
-import LoadingSpinner from '@/app/(components)/ui/loading-indicator';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { createHighlighter } from 'shiki';
@@ -31,10 +30,11 @@ const CodeBlock = ({ code, lang }: ICodeBlock) => {
     };
     loadHighlighter();
   });
+
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: highlightedCode || <LoadingSpinner />,
+        __html: highlightedCode,
       }}
       className={cx(
         'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',

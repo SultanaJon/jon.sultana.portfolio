@@ -1,14 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/theme-provider';
 import Header from '@/app/(components)/layout/header';
 import GripBar from './(components)/ui/grip-bar';
 import NavigationPane from '@/app/(components)/layout/navigation-pane';
 import Footer from '@/app/(components)/layout/footer';
-import { Separator } from '@/components/ui/separator';
-import { portfolioConfig } from '@/config/porfolio.config';
-
+import cx from 'classnames';
 import './globals.css';
+import { userJobTitle, userName } from '@/config/user.config';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,7 +19,14 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = portfolioConfig.metadata;
+export const metadata: Metadata = {
+  title: `${userName} | ${userJobTitle}`,
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default function RootLayout({
   children,
@@ -34,20 +40,36 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme={'dark'}
           enableSystem
           disableTransitionOnChange
         >
           <div className="flex flex-col h-full">
             <GripBar />
             <Header />
-            <Separator orientation="horizontal" />
-            <div className="flex h-full">
-              <NavigationPane />
-              <Separator orientation="vertical" />
-              {children}
+            <div
+              className={cx(
+                'flex flex-col h-full overflow-auto',
+                'md:flex-row'
+              )}
+            >
+              <div
+                className={cx(
+                  'order-2 border-solid border-t-[1px] border-[--border]',
+                  'md:order-first md:border-t-[0] md:border-r-[1px]'
+                )}
+              >
+                <NavigationPane />
+              </div>
+              <div
+                className={cx(
+                  'order-1 w-full h-full overflow-auto',
+                  'md:order-2'
+                )}
+              >
+                {children}
+              </div>
             </div>
-            <Separator orientation="horizontal" />
             <Footer />
           </div>
         </ThemeProvider>

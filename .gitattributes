@@ -1,0 +1,2 @@
+config/* merge=ours
+data/* merge=ours

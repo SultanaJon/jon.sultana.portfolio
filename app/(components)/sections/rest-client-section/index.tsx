@@ -10,16 +10,13 @@ import {
 } from '@/components/ui/resizable';
 import ResponseSection from './components/response-section';
 import RequestEditorSection from './components/request-editor-section';
-import { useRequestStore } from '@/stores/request-store';
 
 const RestClientSection = () => {
   const [componentRendering, setComponentRendering] = useState<boolean>(true);
 
-  const { requests, isLoading } = useRequestStore();
-
   useEffect(() => {
-    if (requests.length > 0 || !isLoading) setComponentRendering(false);
-  }, [requests, isLoading]);
+    setComponentRendering(false);
+  }, []);
 
   if (componentRendering) return <LoadingSpinner />;
 
