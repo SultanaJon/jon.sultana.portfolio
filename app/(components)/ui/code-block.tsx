@@ -29,7 +29,7 @@ const CodeBlock = ({ code, lang }: ICodeBlock) => {
       );
     };
     loadHighlighter();
-  }, []);
+  });
 
   return (
     <div
