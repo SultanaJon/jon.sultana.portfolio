@@ -1,6 +1,5 @@
 'use client';
 import ThemeSelector from '../../ui/theme-selector';
-import ProfileAvatar from '../../ui/profile-avatar';
 import SocialLinks from '../../ui/social-links';
 import WorkspaceSelector from './components/workspace-selector';
 import { useWindowSize, WindowSize } from '@/hooks/useWindowSize';
@@ -21,7 +20,6 @@ const Header = () => {
       <div className="justify-end">
         <ThemeSelector />
         {displayWorkspaceSelector && <WorkspaceSelector />}
-        <ProfileAvatar />
       </div>
     </header>
   );
