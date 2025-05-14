@@ -2,38 +2,24 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
-    name: 'e-commerce-store',
-    link: 'https://github.com/AwesomeDev/e-commerce-store',
+    name: 'http-client-portfolio',
+    link: 'https://github.com/SultanaJon/http-client-portfolio',
     description:
-      'A fully functional e-commerce platform built with modern web technologies.',
-    technologies: ['react', 'redux', 'nodejs', 'express', 'mongodb'],
+      'A developer portfolio inspired by the Hoppscotch HTTP client UI—built to showcase projects, skills, and a passion for clean, interactive web apps.',
+    technologies: [
+      'nextjs',
+      'react',
+      'typescript',
+      'zustand',
+      'shadcn',
+      'tailwind',
+    ],
   },
   {
-    name: 'social-media-app',
-    link: 'https://gitlab.com/CodeNinja/social-media-app',
+    name: 'magic-eight-ball',
+    link: 'https://github.com/SultanaJon/magic-eight-ball',
     description:
-      'A social networking application connecting users through posts and interactions.',
-    technologies: ['vuejs', 'vuex', 'firebase'],
-  },
-  {
-    name: 'task-management-tool',
-    link: 'https://bitbucket.org/CreativeCoders/task-management-tool',
-    description:
-      'An application to help users organize and manage their daily tasks and projects.',
-    technologies: ['angular', 'typescript', 'nestjs', 'postgresql'],
-  },
-  {
-    name: 'blog-website',
-    link: 'https://github.com/WebArtisan/blog-website',
-    description:
-      'A personal blog website to share thoughts and ideas with the world.',
-    technologies: ['nextjs', 'react', 'tailwindcss', 'contentful'],
-  },
-  {
-    name: 'recipe-app',
-    link: 'https://github.com/FoodieDev/recipe-app',
-    description:
-      'A mobile application to discover and save your favorite recipes.',
-    technologies: ['react native', 'expo'],
+      'Magic 🎱 web application used for fortune telling and seeking advice.',
+    technologies: ['nextjs', 'react', 'typescript', 'shadcn'],
   },
 ];

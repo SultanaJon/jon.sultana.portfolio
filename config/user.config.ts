@@ -48,6 +48,6 @@ export const userStory = `
   through clean, maintainable code. When I'm not deep in a code
   editor, you'll likely find me spending time with my family,
   exploring the natural beauty of Northern Michigan, or tearing
-  through the trails on my mountain bike. Thanks for stopping by.
+  through the trails on my mountain bike. Thanks for stopping by. 
   Before you go, be sure to check out my REST client for more
   information about me and any recent projects I've been working on!`;
