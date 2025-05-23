@@ -1,6 +1,8 @@
 # Jon Sultana — Developer Portfolio
 
-This is my personal developer portfolio built with [Next.js](https://nextjs.org/), styled with Tailwind CSS, and inspired by the clean, developer-friendly interface of the Hoppscotch HTTP client. It showcases my projects, technical skills, and love for building modern web applications.
+This is an open-source developer portfolio template built with [Next.js](https://nextjs.org/), and styled using Tailwind CSS. Inspired by the clean, developer-friendly interface of the Hoppscotch HTTP client, it’s designed to showcase your projects, technical skills, and passion for building modern web applications. To see a live example of this portfolio, visit [jonsultana.vercel.app](https://jonsultana.vercel.app).
+
+https://github.com/user-attachments/assets/dd417df3-3006-4dc1-824e-0f75f2a07854
 
 ## 🚀 Getting Started
 
