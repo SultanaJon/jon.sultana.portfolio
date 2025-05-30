@@ -8,6 +8,7 @@ import Footer from '@/app/(components)/layout/footer';
 import cx from 'classnames';
 import './globals.css';
 import { userJobTitle, userName } from '@/config/user.config';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -73,6 +74,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
