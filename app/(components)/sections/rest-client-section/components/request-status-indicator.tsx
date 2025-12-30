@@ -10,7 +10,7 @@ const RequestStatusIndicator = ({
   color,
 }: IRequestStatusIndicator) => {
   return (
-    <div className="flex gap-[.5rem] [&_*]:text-[.8rem] font-bold">
+    <div className="flex gap-[.5rem] **:text-[.8rem] font-bold">
       <span>{label}</span>
       <span style={{ color: color }}>{value}</span>
     </div>

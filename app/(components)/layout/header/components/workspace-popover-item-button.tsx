@@ -16,7 +16,7 @@ const WorkspacePopoverItemButton = ({
   return (
     <Button
       variant="ghost"
-      className="flex hover:bg-[--divider-dark-color] w-full justify-start"
+      className="flex hover:bg-(--divider-dark-color) w-full justify-start"
     >
       {icon}
       <span className="text-[.8rem]">{displayText}</span>

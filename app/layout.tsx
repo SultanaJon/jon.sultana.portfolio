@@ -55,8 +55,8 @@ export default function RootLayout({
             >
               <div
                 className={cx(
-                  'order-2 border-solid border-t-[1px] border-[--border]',
-                  'md:order-first md:border-t-[0] md:border-r-[1px]'
+                  'order-2 border-solid border-t border-(--border)',
+                  'md:order-first md:border-t-0 md:border-r'
                 )}
               >
                 <NavigationPane />

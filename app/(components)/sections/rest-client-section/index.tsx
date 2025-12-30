@@ -28,7 +28,7 @@ const RestClientSection = () => {
           <ResizablePanel defaultSize={30}>
             <RequestEditorSection />
           </ResizablePanel>
-          <ResizableHandle className="hover:bg-[--primary] hover:!h-[.2rem] cursor-ew-resize" />
+          <ResizableHandle className="hover:bg-(--primary) hover:h-[.2rem]! cursor-ew-resize" />
           <ResizablePanel
             defaultSize={70}
             className="flex flex-col overflow-hidden"

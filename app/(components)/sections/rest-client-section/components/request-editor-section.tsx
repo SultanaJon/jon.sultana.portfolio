@@ -17,24 +17,24 @@ const RequestEditorSection = () => {
   }, [selectedRequest]);
   return (
     <>
-      <div className="flex flex-col gap-[1rem] p-[1.2rem] sm:flex-row">
-        <div className="flex w-full h-[2.5rem]">
+      <div className="flex flex-col gap-4 p-[1.2rem] sm:flex-row">
+        <div className="flex w-full h-10">
           <RequestInput url={endpoint} />
         </div>
-        <div className="flex gap-[.5rem] h-[2.5rem] sm:ml-auto">
+        <div className="flex gap-[.5rem] h-10 sm:ml-auto">
           <MenuButton
             className={cx(
               'grow',
-              '[&_*]:text-[#fff]',
-              'bg-[--primary] [&>button:hover]:bg-[--secondary]'
+              '**:text-white',
+              'bg-(--primary) [&>button:hover]:bg-(--secondary)'
             )}
           >
             Send
           </MenuButton>
           <MenuButton
             className={cx(
-              '[&_*]:text-[--foreground]',
-              ' bg-[--accent] [&>button:hover]:bg-[--border]'
+              '**:text-(--foreground)',
+              ' bg-(--accent) [&>button:hover]:bg-(--border)'
             )}
           >
             <SaveIcon />
@@ -55,8 +55,8 @@ const RequestEditorSection = () => {
           <RequestEditorTab text="Variables" />
         </div>
       </div>
-      <div className="flex w-full *:border-[1px] *:border-[--border]">
-        <div className="!border-l-[0]">
+      <div className="flex w-full *:border *:border-(--border)">
+        <div className="border-l-0!">
           <GhostIconButton onClick={() => {}} icon={<></>} />
         </div>
         <div className="inline-flex flex-[1_1_0]">
@@ -69,14 +69,14 @@ const RequestEditorSection = () => {
           <GhostIconButton
             onClick={() => {}}
             icon={<CheckCircle2Icon />}
-            className="[&_*]:text-green-500 [&_*]:hover:text-green-500"
+            className="**:text-green-500 hover:**:text-green-500"
           />
         </div>
-        <div className="!border-r-[0]">
+        <div className="border-r-0!">
           <GhostIconButton
             onClick={() => {}}
             icon={<TrashIcon />}
-            className="[&_*]:text-[--destructive] [&_*]:hover:text-[--destructive]"
+            className="**:text-(--destructive) hover:**:text-(--destructive)"
           />
         </div>
       </div>

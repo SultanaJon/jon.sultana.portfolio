@@ -8,17 +8,17 @@ export interface IRequestInput {
 
 const RequestInput = ({ url }: IRequestInput) => {
   return (
-    <div className="flex bg-[--accent] w-full rounded border border-[--border]">
-      <div className="flex [&_*]:bg-transparent bg-[--accent] [&_*]:shadow-none rounded-none [&_*]:text-[--foreground] border-r-[1px] border-r-[--border]">
-        <Button className="h-full w-[6rem] hover:bg-[--border] rounded-r-none">
+    <div className="flex bg-(--accent) w-full rounded border border-(--border)">
+      <div className="flex **:bg-transparent bg-(--accent) **:shadow-none rounded-none **:text-(--foreground) border-r border-r-(--border)">
+        <Button className="h-full w-24 hover:bg-(--border) rounded-r-none">
           GET
         </Button>
-        <Button className="h-full w-[2rem] hover:bg-[--border] rounded-none">
+        <Button className="h-full w-8 hover:bg-(--border) rounded-none">
           <ChevronDown />
         </Button>
       </div>
       <Input
-        className="bg-transparent focus-visible:ring-transparent border-none shadow-none font-medium placeholder:text-[--muted-secondary-foreground] disabled:text-[--primary-foreground] disabled:cursor-text"
+        className="bg-transparent focus-visible:ring-transparent border-none shadow-none font-medium placeholder:text-(--muted-secondary-foreground) disabled:text-(--primary-foreground) disabled:cursor-text"
         placeholder="Enter a URL"
         defaultValue={url}
         disabled

@@ -26,7 +26,7 @@ const RequestStatusSection = ({
   }, [responseId]);
 
   return (
-    <div className="flex gap-[1.5rem] p-[1.2rem]">
+    <div className="flex gap-6 p-[1.2rem]">
       <RequestStatusIndicator
         label="Status:"
         value={`${code} - ${codeDescription}`}
