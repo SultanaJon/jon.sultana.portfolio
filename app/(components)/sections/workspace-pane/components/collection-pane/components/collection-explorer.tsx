@@ -28,11 +28,11 @@ const CollectionExplorer = () => {
   return (
     <div>
       <div className="group flex flex-row cursor-pointer">
-        <span className="truncate flex flex-row gap-[1rem] items-center">
-          <span className="pl-[1rem]">
+        <span className="truncate flex flex-row gap-4 items-center">
+          <span className="pl-4">
             <FolderOpenIcon size={16} />
           </span>
-          <span className="truncate text-[.875rem] font-medium  group-hover:text-[--primary-foreground]">
+          <span className="truncate text-[.875rem] font-medium  group-hover:text-(--primary-foreground)">
             {collection?.name}
           </span>
         </span>

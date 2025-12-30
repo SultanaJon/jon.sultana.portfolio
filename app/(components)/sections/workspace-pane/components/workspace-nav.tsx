@@ -25,7 +25,7 @@ export default function WorkspaceNav() {
   ];
 
   return (
-    <aside className="bg-[--background]">
+    <aside className="bg-(--background)">
       <nav className="flex flex-col gap-[.5rem]">
         {items.map((item, index) => (
           <GhostIconButton
@@ -33,9 +33,9 @@ export default function WorkspaceNav() {
             icon={item.icon}
             onClick={() => {}}
             className={cx(
-              !item.isActive ? '[&_*]:hover:text-[--accent-foreground]' : '',
+              !item.isActive ? 'hover:**:text-(--accent-foreground)' : '',
               item.isActive
-                ? '[&_*]:text-[--primary] [&_*]:hover:text-[--primary]'
+                ? '**:text-(--primary) hover:**:text-(--primary)'
                 : ''
             )}
           />

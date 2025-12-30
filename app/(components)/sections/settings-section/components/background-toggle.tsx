@@ -44,7 +44,7 @@ export default function BackgroundToggle({
           <ToggleGroupItem
             key={index}
             value={themeName}
-            className={theme === themeName ? '[&_*]:text-[--primary]' : ''}
+            className={theme === themeName ? '**:text-(--primary)' : ''}
           >
             {getIcon(themeName)}
           </ToggleGroupItem>

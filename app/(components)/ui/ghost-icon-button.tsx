@@ -25,7 +25,7 @@ const GhostIconButton = ({
       variant={`ghost`}
       onClick={onClick}
       className={cx(
-        '[&_*]:hover:text-[--accent-foreground] truncate',
+        'hover:**:text-(--accent-foreground) truncate',
         className
       )}
     >

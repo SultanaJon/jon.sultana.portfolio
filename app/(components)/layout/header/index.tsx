@@ -13,7 +13,7 @@ const Header = () => {
     windowSize > WindowSize.Small && pathname == '/rest';
 
   return (
-    <header className="grid grid-cols-2 p-[.6rem] *:flex *:gap-[1rem] *:items-center border-solid border-b-[1px] border-[--border]">
+    <header className="grid grid-cols-2 p-[.6rem] *:flex *:gap-4 *:items-center border-solid border-b border-(--border)">
       <div>
         <SocialLinks />
       </div>

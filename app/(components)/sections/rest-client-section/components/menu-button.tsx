@@ -12,18 +12,18 @@ const MenuButton = ({ children, className }: IMenuButton) => {
   return (
     <div
       className={cx(
-        `flex [&_*]:bg-transparent [&_*]:shadow-none rounded`,
+        `flex **:bg-transparent **:shadow-none rounded`,
         className
       )}
     >
       <Button
         className={cx(
-          `grow h-full w-[6rem] rounded-r-none justify-center items-center`
+          `grow h-full w-24 rounded-r-none justify-center items-center`
         )}
       >
         {children}
       </Button>
-      <Button className={cx(`h-full w-[2rem] rounded-l-none ml-auto`)}>
+      <Button className={cx(`h-full w-8 rounded-l-none ml-auto`)}>
         <ChevronDown />
       </Button>
     </div>

@@ -27,7 +27,7 @@ export default function Footer() {
   const displayTools = windowSize >= WindowSize.Medium && pathname === '/rest';
 
   return (
-    <div className="border-solid border-t-[1px] border-[--border] mt-auto ">
+    <div className="border-solid border-t border-(--border) mt-auto ">
       <div className={cx('flex p-[.5rem]')}>
         {displayTools && (
           <div>

@@ -7,7 +7,7 @@ const ClientTabSection = () => {
   const { requests, selectedRequest } = useRequestStore();
 
   return (
-    <div className="flex flex-row w-full bg-[--accent]">
+    <div className="flex flex-row w-full bg-(--accent)">
       <div className="flex flex-1 overflow overflow-x-scroll scrollbar-hide">
         <div className="flex">
           {requests.length > 0 ? (

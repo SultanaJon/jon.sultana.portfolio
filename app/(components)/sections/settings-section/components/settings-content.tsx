@@ -6,6 +6,6 @@ export interface ISettingContentProps {
 
 export default function SettingsContent({ children }: ISettingContentProps) {
   return (
-    <div className="w-[60%] p-[1rem] flex flex-col gap-[2rem]">{children}</div>
+    <div className="w-[60%] p-4 flex flex-col gap-8">{children}</div>
   );
 }

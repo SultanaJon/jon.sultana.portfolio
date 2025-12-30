@@ -19,29 +19,29 @@ const AboutPage = () => {
     <div className={cx('flex flex-col', 'lg:flex-row')}>
       <section
         className={cx(
-          'w-full flex flex-col gap-[1.5rem] py-[2rem] px-[2rem]',
-          'md:px-[5rem] lg:w-[50%] lg:py-[5rem] lg:px-[2.5rem]'
+          'w-full flex flex-col gap-6 py-8 px-8',
+          'md:px-20 lg:w-[50%] lg:py-20 lg:px-10'
         )}
       >
         <div>
-          <h1 className="text-6xl font-bold mb-2 text-[--primary]">
+          <h1 className="text-6xl font-bold mb-2 text-(--primary)">
             {`Hi, I'm ${userName}`}
           </h1>
           <h3 className="text-2xl font-medium">
             {`A ${userJobTitle} based in ${userLocation}`}
           </h3>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex flex-col gap-4">
           <p className="text-xl font-light">{userStory}</p>
         </div>
       </section>
       <section
         className={cx(
-          'w-full py-[2rem] px-[2rem]',
-          'md:px-[5rem] lg:w-[50%] lg:py-[5rem] lg:px-[2.5rem]'
+          'w-full py-8 px-8',
+          'md:px-20 lg:w-[50%] lg:py-20 lg:px-10'
         )}
       >
-        <div className="flex flex-col gap-[2rem]">
+        <div className="flex flex-col gap-8">
           <CodeEditor tabs={['>_terminal']}>
             <CodeBlock code={`npm install hire`} lang="shell" />
           </CodeEditor>
