@@ -17,7 +17,7 @@ export default function WorkspaceBreadcrumb() {
   }, [workspace]);
 
   return (
-    <div className="flex gap-[.2rem] px-[.5rem] py-[1rem] [&_*]:text-[.7rem] font-medium text-[--muted-secondary-foreground]">
+    <div className="flex gap-[.2rem] px-[.5rem] py-4 **:text-[.7rem] font-medium text-(--muted-secondary-foreground)">
       <span className="truncate">{workspaceName}</span>
       <ChevronRight size={'17'} />
       <span>Collections</span>

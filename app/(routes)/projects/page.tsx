@@ -42,7 +42,7 @@ const ProjectsPage = () => {
   return (
     <div
       className={cx(
-        'grid grid-cols-1 w-full gap-[2rem] p-[2rem]',
+        'grid grid-cols-1 w-full gap-8 p-8',
         'sm:grid-cols-2 lg:grid-cols-3'
       )}
     >
@@ -52,11 +52,11 @@ const ProjectsPage = () => {
             <div className="flex flex-col h-full w-full">
               <div
                 className={cx(
-                  'flex flex-col gap-[1.5rem] h-full w-full p-[2.5rem] border-solid border-[--border] border-[1px] rounded-lg bg-[--accent]',
-                  'hover:border-[--primary]'
+                  'flex flex-col gap-6 h-full w-full p-10 border-solid border-(--border) border rounded-lg bg-(--accent)',
+                  'hover:border-(--primary)'
                 )}
               >
-                <h3 className="text-3xl font-bold text-[--primary]">
+                <h3 className="text-3xl font-bold text-(--primary)">
                   {project.name}
                 </h3>
                 <p className="text-xl font-light">{project.description}</p>
@@ -76,7 +76,7 @@ const ProjectsPage = () => {
                               }
                             : undefined
                         }
-                        className={`border-solid border-[1px] rounded-full px-[.5rem] py-[.2rem] text-[white]`}
+                        className={`border-solid border rounded-full px-[.5rem] py-[.2rem] text-[white]`}
                       >
                         {technology}
                       </span>

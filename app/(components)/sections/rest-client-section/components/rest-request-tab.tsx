@@ -25,9 +25,9 @@ const RestRequestTab = ({
     <button
       onClick={() => setSelectedRequest(requestId)}
       className={cx(
-        'group h-[3.8rem] w-[13rem] border-t-[.125rem] border-transparent hover:bg-[--border] border-r-[.025rem] border-r-[--border]',
+        'group h-[3.8rem] w-52 border-t-[.125rem] border-transparent hover:bg-(--border) border-r-[.025rem] border-r-(--border)',
         isActive
-          ? 'border-t-[--primary] bg-[--background] hover:bg-[--background]'
+          ? 'border-t-(--primary) bg-(--background) hover:bg-(--background)'
           : ''
       )}
     >
@@ -35,13 +35,13 @@ const RestRequestTab = ({
         <div className="flex text-left truncate items-center p-[.8rem] h-full">
           <div className="truncate">
             <div className="flex truncate gap-[.5rem]">
-              <span className="font-semibold text-[--method-get-color]">
+              <span className="font-semibold text-(--method-get-color)">
                 {method}
               </span>
               <span
                 className={cx(
                   'flex w-full text-left truncate',
-                  isActive ? '[&_*]:text-[--primary-foreground]' : ''
+                  isActive ? '**:text-(--primary-foreground)' : ''
                 )}
               >
                 <span className="truncate font-medium pl-[.5rem] pr-[.5rem]">

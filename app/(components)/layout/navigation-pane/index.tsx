@@ -36,7 +36,7 @@ export default function NavigationPane() {
       className={cx(
         'w-full',
         'md:h-full',
-        isNavPaneExpanded ? 'w-[5rem]' : 'w-[3.8rem]'
+        isNavPaneExpanded ? 'w-20' : 'w-[3.8rem]'
       )}
     >
       <nav className={cx('flex flex-row', 'md:flex-col')}>

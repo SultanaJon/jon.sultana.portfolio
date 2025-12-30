@@ -20,7 +20,7 @@ const RestPage = () => {
         <RestClientSection />
       </ResizablePanel>
       <ResizableHandle
-        className="hover:bg-[--primary] hover:w-[.2rem] cursor-ew-resize"
+        className="hover:bg-(--primary) hover:w-[.2rem] cursor-ew-resize"
         disabled={!isWorkspacePaneExpanded}
       />
       {isWorkspacePaneExpanded && (
