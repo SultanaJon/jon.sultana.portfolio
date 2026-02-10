@@ -10,7 +10,7 @@ const enum WindowSize {
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState<WindowSize>(WindowSize.Small);
-
+ 
   useEffect(() => {
     const handleResize = () => {
       let size = window.innerWidth;
