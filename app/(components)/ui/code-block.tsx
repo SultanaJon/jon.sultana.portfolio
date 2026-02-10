@@ -37,7 +37,7 @@ const CodeBlock = ({ code, lang }: ICodeBlock) => {
         __html: highlightedCode,
       }}
       className={cx(
-        'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
+        'w-full h-full overflow-auto max-h-[300px] [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
         theme === 'light' ? ' [&_pre]:bg-(--accent)!' : ''
       )}
     />

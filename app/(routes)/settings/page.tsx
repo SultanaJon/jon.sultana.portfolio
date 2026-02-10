@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { useTheme } from 'next-themes';
 import { useAccentStore } from '@/stores/accent-store';
 import { useEffect, useState } from 'react';
