@@ -14,7 +14,7 @@ const CodeEditor = ({ tabs }: ICodeEditor) => {
 
   const commandText = "dotnet run",
     buildInfo =
-      `Using launch settings from C:\\Users\\jondoe\\Projects\\porfolio-api\\Properties\\launchSettings.json...
+      `Using launch settings from C:\\Users\\jonsu\\Projects\\porfolio-api\\Properties\\launchSettings.json...
 Building...`
 
   const code = userCodeSnippet;
@@ -77,7 +77,7 @@ Building...`
             </div>
             <div>
               <div><span className='text-green-200'>info</span>{`: Microsoft.Hosting.Lifetime[0]`}</div>
-              <div>{`        Content root path: C:\\Users\\jondoe\\Projects\\porfolio-api`}</div>
+              <div>{`        Content root path: C:\\Users\\jonsu\\Projects\\porfolio-api`}</div>
             </div>
           </div>
         )}
