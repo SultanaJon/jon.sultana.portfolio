@@ -1,11 +1,8 @@
 'use client';
 
-import CodeBlock from '@/app/(components)/ui/code-block';
-import * as React from 'react';
 import CodeEditor from '@/app/(components)/ui/code-editor';
 import cx from 'classnames';
 import {
-  userCodeSnippet,
   userJobTitle,
   userLocation,
   userName,
@@ -13,8 +10,6 @@ import {
 } from '@/config/user.config';
 
 const AboutPage = () => {
-  const code = userCodeSnippet;
-
   return (
     <div className={cx('flex flex-col', 'lg:flex-row')}>
       <section
@@ -42,12 +37,7 @@ const AboutPage = () => {
         )}
       >
         <div className="flex flex-col gap-8">
-          <CodeEditor tabs={['>_terminal']}>
-            <CodeBlock code={`npm install hire`} lang="shell" />
-          </CodeEditor>
-          <CodeEditor tabs={['hire.ts']}>
-            <CodeBlock code={code} lang="typescript" />
-          </CodeEditor>
+          <CodeEditor tabs={['program.cs']} />
         </div>
       </section>
     </div>

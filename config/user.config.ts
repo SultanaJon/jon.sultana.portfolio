@@ -14,31 +14,14 @@ export const userSocialLinks: SocialLinks = {
   linkedin: 'https://www.linkedin.com/in/johndoe',
 };
 
-const userPassion =
-  'Building web applications that improve the user experience.';
+export const userCodeSnippet = `
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
-const userObject = {
-  name: userName,
-  role: userJobTitle,
-  skills: [
-    'JavaScript',
-    'TypeScript',
-    'HTML',
-    'CSS',
-    'Next.js',
-    'React',
-    '...',
-  ],
-  passion: userPassion,
-};
+app.MapGet("/", () => "Hello World!");
 
-export const userCodeSnippet = `import { hire } from 'hire';
-
-// Initialize the package with your developer details
-const developer = new hire(${JSON.stringify(userObject, null, 2)});
-
-// Start working with your new developer!
-developer.startBuilding();`;
+app.Run();
+`;
 
 export const userStory = `I am a ${userJobTitle} who enjoys building both frontend
             and backend applications that are fast, intuitive, and thoughtfully
