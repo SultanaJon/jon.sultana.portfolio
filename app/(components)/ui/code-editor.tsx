@@ -9,7 +9,7 @@ const CodeEditor = () => {
   const code = userCodeSnippet;
 
   return (
-    <div className={`rounded overflow-hidden bg-(--background-secondary-contrast) ${theme == 'light' ? 'border solid border-gray-300': ''}`}>
+    <div className={`rounded overflow-hidden ${theme == 'light' ? 'light-plus' : 'bg-(--background-secondary-contrast)'} ${theme == 'light' ? 'border solid border-gray-300': ''}`}>
       <GripBar tabs={['Program.cs']} />
       <div className='h-[300px] max-h-[300px]'>
         <CodeFrame code={code} lang="csharp" />
