@@ -2,7 +2,7 @@ import RequestEditorTab from './request-editor-tab';
 import { useRequestStore } from '@/stores/request-store';
 import { useEffect, useState } from 'react';
 import RequestStatusSection from './request-status-section';
-import CodeBlock from '@/app/(components)/ui/code-block';
+import CodeFrame from '@/app/(components)/ui/code-frame';
 import { Response } from '@/types/response';
 
 const ResponseSection = () => {
@@ -34,7 +34,7 @@ const ResponseSection = () => {
       {response && (
         <div className="p-[1.2rem] overflow-hidden h-full">
           <div className="h-full overflow-hidden rounded">
-            <CodeBlock
+            <CodeFrame
               code={response.body ? JSON.stringify(response.body, null, 2) : ''}
               lang="json"
             />

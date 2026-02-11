@@ -16,9 +16,49 @@ export const userSocialLinks: SocialLinks = {
 
 export const userCodeSnippet = `
 var builder = WebApplication.CreateBuilder(args);
+
+// Register user services
+builder.Services.AddSingleton<IUserExperienceService, UserExperienceService>();
+builder.Services.AddSingleton<IUserEducationService, UserEducationService>();
+builder.Services.AddSingleton<IUserWeaknessService, UserWeaknessService>();
+builder.Services.AddSingleton<IUserContactInfoService, UserContactInfoService>();
+
 var app = builder.Build();
 
-app.MapGet("/hello", () => "Hello World!");
+app.UseHttpsRedirection();
+
+// API Endpoints
+app.MapGet("/api/v1/user/{id}/experience", (string id, IUserExperienceService service) =>
+{
+    var experiences = service.GetExperience(id);
+    return experiences != null 
+        ? Results.Ok(experiences) 
+        : Results.NotFound(new { message = $"No experience found for user {id}" });
+});
+
+app.MapGet("/api/v1/user/{id}/education", (string id, IUserEducationService service) =>
+{
+    var education = service.GetEducation(id);
+    return education != null 
+        ? Results.Ok(education) 
+        : Results.NotFound(new { message = $"No education found for user {id}" });
+});
+
+app.MapGet("/api/v1/user/{id}/weaknesses", (string id, IUserWeaknessService service) =>
+{
+    var weaknesses = service.GetWeaknesses(id);
+    return weaknesses != null 
+        ? Results.Ok(weaknesses) 
+        : Results.NotFound(new { message = $"No weaknesses found for user {id}" });
+});
+
+app.MapGet("/api/v1/user/{id}/contact-info", (string id, IUserContactInfoService service) =>
+{
+    var contactInfo = service.GetContactInfo(id);
+    return contactInfo != null 
+        ? Results.Ok(contactInfo) 
+        : Results.NotFound(new { message = $"No contact info found for user {id}" });
+});
 
 app.Run();
 `;

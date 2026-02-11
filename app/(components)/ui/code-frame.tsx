@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { createHighlighter } from 'shiki';
 import cx from 'classnames';
 
-export interface ICodeBlock {
+export interface ICodeFrame {
   code: string;
   lang: string;
 }
 
-const CodeBlock = ({ code, lang }: ICodeBlock) => {
+const CodeFrame = ({ code, lang }: ICodeFrame) => {
   const [highlightedCode, setHighlightedCode] = useState<string>('');
   const { theme } = useTheme();
 
@@ -37,11 +37,11 @@ const CodeBlock = ({ code, lang }: ICodeBlock) => {
         __html: highlightedCode,
       }}
       className={cx(
-        'w-full h-full overflow-auto max-h-[300px] [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
+        'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
         theme === 'light' ? ' [&_pre]:bg-(--accent)!' : ''
       )}
     />
   );
 };
 
-export default CodeBlock;
+export default CodeFrame;
