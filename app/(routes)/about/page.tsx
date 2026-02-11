@@ -1,6 +1,5 @@
 'use client';
 
-import CodeEditor from '@/app/(components)/ui/code-editor';
 import cx from 'classnames';
 import {
   userJobTitle,
@@ -8,14 +7,21 @@ import {
   userName,
   userStory,
 } from '@/config/user.config';
+import GripBar from '@/app/(components)/ui/grip-bar';
+import CodeFrame from '@/app/(components)/ui/code-frame';
+import Panel from '@/app/(components)/ui/panel';
+import { userCodeSnippet } from '@/config/user.config';
+import CodeEditor from '@/app/(components)/ui/code-editor';
 
 const AboutPage = () => {
+  const code = userCodeSnippet
+
   return (
     <div className={cx('flex flex-col', 'lg:flex-row')}>
       <section
         className={cx(
           'w-full flex flex-col gap-6 py-8 px-8',
-          'md:px-20 lg:w-[50%] lg:py-20 lg:px-10'
+          'md:px-10 lg:w-[50%] lg:py-10 lg:px-10'
         )}
       >
         <div>
@@ -33,12 +39,10 @@ const AboutPage = () => {
       <section
         className={cx(
           'w-full py-8 px-8',
-          'md:px-20 lg:w-[50%] lg:py-20 lg:px-10'
+          'md:px-10 lg:w-[50%] lg:py-10 lg:px-10'
         )}
       >
-        <div className="flex flex-col gap-8">
-          <CodeEditor tabs={['program.cs']} />
-        </div>
+        <CodeEditor/>
       </section>
     </div>
   );
