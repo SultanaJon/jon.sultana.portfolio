@@ -67,7 +67,7 @@ export default function Panel() {
                 <span>PROBLEMS</span>
                 <span>OUTPUT</span>
                 <span>DEBUG CONSOLE</span>
-                <span className='text-white border-b border-white'>TERMINAL</span>
+                <span className='text-(--secondary-foreground) border-b border-(--secondary-foreground)'>TERMINAL</span>
                 <span>PORTS</span>
             </div>
             <div className='h-[150px] px-[1rem] whitespace-pre'>
