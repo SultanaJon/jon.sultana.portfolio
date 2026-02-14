@@ -2,10 +2,10 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
-    name: 'http-client-portfolio',
-    link: 'https://github.com/SultanaJon/http-client-portfolio',
+    name: 'jon.sultana.portfolio',
+    link: 'https://github.com/SultanaJon/jon.sultana.portfolio',
     description:
-      'A developer portfolio inspired by the Hoppscotch HTTP client UI—built to showcase projects, skills, and a passion for clean, interactive web apps.',
+      'A personal portfolio modeled after the Hopscotch HTTP client.',
     technologies: [
       'nextjs',
       'react',
