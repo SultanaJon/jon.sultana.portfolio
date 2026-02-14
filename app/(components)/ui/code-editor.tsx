@@ -3,19 +3,25 @@ import CodeFrame from './code-frame';
 import { userCodeSnippet } from '@/config/user.config';
 import Panel from './panel';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const CodeEditor = () => {
+  const [mounted, setMounted] = useState<boolean>(false)
   const { theme } = useTheme();
   const code = userCodeSnippet;
 
+  useEffect(() => setMounted(true), [])
+  
   return (
-    <div className={`rounded overflow-hidden ${theme == 'light' ? 'light-plus' : 'bg-(--background-secondary-contrast)'} ${theme == 'light' ? 'border solid border-gray-300': ''}`}>
-      <GripBar tabs={['Program.cs']} />
-      <div className='h-[300px] max-h-[300px]'>
-        <CodeFrame code={code} lang="csharp" />
-      </div>
-      <Panel />
-    </div >
+    mounted && (
+      <div className={`rounded overflow-hidden ${theme == 'light' ? '' : 'bg-(--background-secondary-contrast)'} ${theme == 'light' ? 'border solid border-gray-300' : ''}`}>
+        <GripBar tabs={['Program.cs']} />
+        <div className='h-[300px] max-h-[300px]'>
+          <CodeFrame code={code} lang="csharp" />
+        </div>
+        <Panel />
+      </div >
+    )
   );
 };
 

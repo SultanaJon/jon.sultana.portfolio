@@ -32,15 +32,17 @@ const CodeFrame = ({ code, lang }: ICodeFrame) => {
   });
 
   return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: highlightedCode,
-      }}
-      className={cx(
-        'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
-        theme === 'light' ? ' [&_pre]:bg-(--accent)!' : ''
-      )}
-    />
+    highlightedCode !== '' && (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: highlightedCode,
+        }}
+        className={cx(
+          'w-full h-full overflow-auto [&_pre]:p-[1.2rem] [&_pre]:h-full [&_pre]:overflow-auto',
+          theme === 'light' ? ' [&_pre]:bg-(--accent)!' : ''
+        )}
+      />
+    )
   );
 };
 
